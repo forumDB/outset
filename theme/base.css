@@ -2440,9 +2440,8 @@ fieldset.polls dd {
 	float: left;
 	width: 10%;
 	border-left: none;
-	padding: 0 5px;
 	margin-left: 0;
-	font-size: 1.1em;
+	font-size: 0.8em;
 }
 
 fieldset.polls dd.resultbar {
@@ -3826,8 +3825,8 @@ ul.topiclist dd {
 }
 
 .content h2, .panel h2 {
-	color: #115098;
-	border-bottom-color: #CCCCCC;
+	color: #000000;
+	font-weight: 600;
 }
 
 dl.faq dt {
@@ -3939,7 +3938,6 @@ dl.thumbnail dt a:hover img {
 ----------------------------------------*/
 
 fieldset.polls dl {
-	border-top-color: #DCDEE2;
 	color: #666666;
 }
 

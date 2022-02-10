@@ -29,6 +29,8 @@ a:hover,a:active,a:focus {
 .text-lesser-darker {color: var(--lesser-darker);}
 .bg-blue-grey {backgorund-color: var(--blue-grey);}
 
+input[type="radio"]:checked+label { font-weight: bold; }
+
 /* Text */
 a { text-decoration: none; }
 a:hover{ text-decoration: none; }
