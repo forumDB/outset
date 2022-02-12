@@ -63,18 +63,44 @@
 
 	<h3>{L_YOUR_DETAILS}</h3>
 
-<!-- EVENT ucp_main_front_user_activity_before -->
-	<dl class="details">
-		<!-- EVENT ucp_main_front_user_activity_prepend -->
-		<dt>{L_JOINED}{L_COLON}</dt> <dd>{JOINED}</dd>
-		<dt>{L_LAST_ACTIVE}{L_COLON}</dt> <dd>{LAST_VISIT_YOU}</dd>
-		<dt>{L_TOTAL_POSTS}{L_COLON}</dt> <dd><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></dd>
-		<!-- IF ACTIVE_FORUM != '' --><dt>{L_ACTIVE_IN_FORUM}{L_COLON}</dt> <dd><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</dd><!-- ENDIF -->
-		<!-- IF ACTIVE_TOPIC != '' --><dt>{L_ACTIVE_IN_TOPIC}{L_COLON}</dt> <dd><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</dd><!-- ENDIF -->
-		<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}{L_COLON}</dt> <dd class="error"><i class="icon fa-exclamation-triangle fa-fw icon-red" aria-hidden="true"></i> [{WARNINGS}]</dd><!-- ENDIF -->
-		<!-- EVENT ucp_main_front_user_activity_append -->
-	</dl>
-<!-- EVENT ucp_main_front_user_activity_after -->
+		<!-- EVENT ucp_main_front_user_activity_before -->
+		<table class="table table-borderless">
+			<tbody>
+				<!-- EVENT ucp_main_front_user_activity_prepend -->
+				<tr>
+					<th scope="row">{L_JOINED}</th>
+					<td>{JOINED}</td>
+				</tr>
+				<tr>
+					<th scope="row">{L_LAST_ACTIVE}</th>
+					<td>{LAST_VISIT_YOU}</td>
+				</tr>
+				<tr>
+					<th scope="row">{L_TOTAL_POSTS}</th>
+					<td><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></td>
+				</tr>
+				<!-- IF ACTIVE_FORUM != '' -->
+				<tr>
+					<th scope="row">{L_ACTIVE_IN_FORUM}</th>
+					<td><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</td>
+				</tr>
+				<!-- ENDIF -->
+				<!-- IF ACTIVE_TOPIC != '' -->
+				<tr>
+					<th scope="row">{L_ACTIVE_IN_TOPIC}</th>
+					<td><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</td>
+				</tr>
+				<!-- ENDIF -->
+				<!-- IF WARNINGS -->
+				<tr>
+					<th scope="row">{L_YOUR_WARNINGS}</th>
+					<td>{WARNINGS}</td>
+				</tr>
+				<!-- ENDIF -->
+				<!-- EVENT ucp_main_front_user_activity_append -->
+			</tbody>
+		</table>
+		<!-- EVENT ucp_main_front_user_activity_after -->
 
 	</div>
 </div>

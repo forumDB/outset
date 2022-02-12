@@ -172,6 +172,13 @@ Header
     max-width: 200px;
 }
 
+.logo-text {
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 3vw;
+    font-weight: 600;
+}
+
 .page-header .nav-link { color: var(--bs-white); }
 .page-header .nav-link:hover,.page-header .nav-link:active,.page-header .nav-link:focus { color: var(--bs-white); filter: brightness(85%);  }
 .navbar-nav .dropdown-menu { position: absolute; }
@@ -197,6 +204,11 @@ Header
 
 .header-nav .icon::before {
     padding-right: 0;
+}
+
+.quick-links svg {
+    width: 40px;
+    color: #FFF;
 }
 
 /* Breadcrumbs */

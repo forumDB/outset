@@ -87,9 +87,8 @@
 				<nav class="navbar">
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown">
-							<a href="#" class="nav-link" id="quickLinks" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								<i class="icon fa-bars fa-fw" aria-hidden="true"></i>
-								{L_QUICK_LINKS}
+							<a href="#" class="nav-link quick-links" id="quickLinks" role="button" name="{L_QUICK_LINKS}" data-bs-toggle="dropdown" aria-expanded="false">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.53 8.95"><defs><style>.cls-1{fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><line class="cls-1" x1="1.5" y1="1.5" x2="24.03" y2="1.5"/><line class="cls-1" x1="1.5" y1="7.44" x2="16.33" y2="7.45"/></g></g></svg>
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="quickLinks">
 								<!-- EVENT navbar_header_quick_links_before -->
@@ -188,8 +187,8 @@
 					<nav class="navbar">
 						<ul class="navbar-nav">
 							<li class="nav-item dropdown">
-								<a href="#" class="nav-link" id="quickLinks" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									<i class="icon fa-bars fa-fw h-100 h-md-auto fs-5" aria-hidden="true"></i>
+								<a href="#" class="nav-link quick-links" id="quickLinks" role="button" title="{L_QUICK_LINKS}" data-bs-toggle="dropdown" aria-expanded="false">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.53 8.95"><defs><style>.cls-1</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><line class="cls-1" x1="1.5" y1="1.5" x2="24.03" y2="1.5"/><line class="cls-1" x1="1.5" y1="7.44" x2="16.33" y2="7.45"/></g></g></svg>
 									<span class="sr-only">{L_QUICK_LINKS}</span>
 								</a>
 								<ul class="dropdown-menu" aria-labelledby="quickLinks">
@@ -286,7 +285,7 @@
 				</div>
 				<!-- EVENT overall_header_headerbar_before -->
 				<a id="logo" class="logo" href="{% if U_SITE_HOME %}{{ U_SITE_HOME }}{% else %}{{ U_INDEX }}{% endif %}" title="{% if U_SITE_HOME %}{{ L_SITE_HOME }}{% else %}{{ L_INDEX }}{% endif %}">
-					<img src="styles/outset/theme/images/logo.png" class="w-100 w-md-auto">
+					<img src="styles/outset/theme/images/logo.pn" alt="{SITENAME}" class="w-100 w-md-auto logo-text">
 				</a>
 				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 
