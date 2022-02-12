@@ -4,7 +4,6 @@
 
 <h2>{L_TITLE}</h2>
 
-<div class="panel">
 	<div class="inner">
 
 	<p>{L_DRAFTS_EXPLAIN}</p>
@@ -13,7 +12,6 @@
 
 		<!-- INCLUDE posting_editor.html -->
 		</div>
-	</div>
 
 			<fieldset class="submit-buttons">
 				{S_HIDDEN_FIELDS}
@@ -28,8 +26,6 @@
 			<li class="header">
 				<dl>
 					<dt><div class="list-inner">{L_DRAFT_TITLE}</div></dt>
-					<dd class="info"><span>{L_SAVE_DATE}</span></dd>
-					<dd class="mark">{L_MARK}</dd>
 				</dl>
 			</li>
 		</ul>
@@ -37,12 +33,12 @@
 
 		<!-- BEGIN draftrow -->
 			<li class="row<!-- IF draftrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-				<dl>
-					<dt>
-						<div class="list-inner">
+				<dl class="row-item d-flex justify-content-between">
+					<dt class="d-flex flex-grow-1">
+						<div class="d-flex flex-column justify-content-center">
 							<a class="topictitle" href="{draftrow.U_VIEW_EDIT}">{draftrow.DRAFT_SUBJECT}</a><br />
-							<!-- IF draftrow.S_LINK_TOPIC -->{L_TOPIC}{L_COLON} <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
-							<!-- ELSEIF draftrow.S_LINK_FORUM -->{L_FORUM}{L_COLON} <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+							<!-- IF draftrow.S_LINK_TOPIC --><p class="forum-description m-0">{L_TOPIC}{L_COLON} <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a></p>
+							<!-- ELSEIF draftrow.S_LINK_FORUM --><p class="forum-description m-0">{L_FORUM}{L_COLON} <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a></p>
 							<!-- ELSEIF S_PRIVMSGS -->
 							<!-- ELSE -->{L_NO_TOPIC_FORUM}<!-- ENDIF -->
 							<div class="responsive-show" style="display: none;">
@@ -51,8 +47,17 @@
 							</div>
 						</div>
 					</dt>
-					<dd class="info"><span>{draftrow.DATE}<br /><!-- IF draftrow.U_INSERT --><a href="{draftrow.U_INSERT}">{L_LOAD_DRAFT}</a> &bull; <!-- ENDIF --><a href="{draftrow.U_VIEW_EDIT}">{L_VIEW_EDIT}</a></span></dd>
-					<dd class="mark"><input type="checkbox" name="d[{draftrow.DRAFT_ID}]" id="d{draftrow.DRAFT_ID}" /></dd>
+					<dd class="info">
+						<p class="text-strong mb-0">{L_SAVE_DATE}</p>
+						<p class="mb-0">{draftrow.DATE}</p>
+						<!-- IF draftrow.U_INSERT -->
+						<p class="mb-0"><a href="{draftrow.U_INSERT}">{L_LOAD_DRAFT}</a> &bull; <!-- ENDIF --><a href="{draftrow.U_VIEW_EDIT}">{L_VIEW_EDIT}</a></p>
+					</dd>
+					<dd class="d-flex align-items-center">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="d[{draftrow.DRAFT_ID}]" id="d{draftrow.DRAFT_ID}">
+						</div>
+					</dd>
 				</dl>
 			</li>
 		<!-- END draftrow -->
@@ -61,16 +66,14 @@
 		<p><strong>{L_NO_SAVED_DRAFTS}</strong></p>
 	<!-- ENDIF -->
 
-		</div>
-	</div>
-
 	<!-- IF .draftrow -->
-		<fieldset class="display-actions">
-			<input class="button2" type="submit" name="delete" value="{L_DELETE_MARKED}" />
-			<div><a href="#" onclick="marklist('postform', '', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('postform', '', false); return false;">{L_UNMARK_ALL}</a></div>
-			{S_FORM_TOKEN}
-		</fieldset>
+	<fieldset class="d-flex flex-column align-items-end">
+		<input class="btn btn-outset" type="submit" name="delete" value="{L_DELETE_MARKED}" />
+		<div><a href="#" onclick="marklist('postform', '', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('postform', '', false); return false;">{L_UNMARK_ALL}</a></div>
+		{S_FORM_TOKEN}
+	</fieldset>
 	<!-- ENDIF -->
+	</div>
 
 <!-- ENDIF -->
 
