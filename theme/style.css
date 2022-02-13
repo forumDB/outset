@@ -685,6 +685,25 @@ ul.cplist {
     margin: 0;
 }
 
+/* User profile */
+.profile-avatar img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    margin-top: -40px;
+}
+
+.contact-box-wrapper {
+    padding: 10px;
+    flex-basis: 50%;
+}
+
+.contact-box {
+    padding: 10px;
+    flex-grow: 1;
+}
+
 /*
 Components
  */
