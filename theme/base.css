@@ -206,15 +206,6 @@ figure {
 }
 
 /**
- * Address differences between Firefox and other browsers.
- */
-
-hr {
-	box-sizing: content-box;
-	height: 0;
-}
-
-/**
  * Contain overflow in all browsers.
  */
 
@@ -451,13 +442,6 @@ textarea {
 figure { margin: 0; }
 img { vertical-align: middle; }
 
-hr {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: 0;
-	border-top: 1px solid #e5e5e5;
-}
-
 blockquote,
 dl,
 dd,
@@ -611,24 +595,6 @@ h4 {
 
 img {
 	border-width: 0;
-}
-
-hr {
-	border: 0 solid transparent;
-	border-top-width: 1px;
-	height: 1px;
-	margin: 5px 0;
-	display: block;
-	clear: both;
-}
-
-hr.dashed {
-	border-top-style: dashed;
-	margin: 10px 0;
-}
-
-hr.divider {
-	display: none;
 }
 
 p.right {
@@ -3526,11 +3492,6 @@ h3 {
 	color: var(--bs-blue);
 }
 
-hr {
-	border-color: #FFFFFF;
-	border-top-color: #CCCCCC;
-}
-
 /*
 --------------------------------------------------------------
 Colours and backgrounds for links.css
@@ -4168,7 +4129,7 @@ Colours and backgrounds for cp.css
 /* Main CP box
 ----------------------------------------*/
 
-.panel-container h3, .panel-container hr, .cp-menu hr {
+.panel-container h3 {
 	border-color: #A4B3BF;
 }
 
