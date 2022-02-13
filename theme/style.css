@@ -64,6 +64,16 @@ h3 { color:var(--main);}
     filter: brightness(95%);
 }
 
+.btn-primary:focus, .btn-primary:active {
+    box-shadow: 0 0 0 .25rem rgba(238, 213, 105, 0.42);
+}
+
+.btn-secondary {
+    color: var(--blue-grey-darker);
+    background-color: var(--blue-grey);
+    border-color: var(--blue-grey);
+}
+
 .btn-outset {
     color: #FFFFFF;
     background-color: var(--main);
@@ -75,14 +85,9 @@ h3 { color:var(--main);}
     filter: brightness(95%);
 }
 
-.btn-primary:focus, .btn-primary:active {
-      box-shadow: 0 0 0 .25rem rgba(238, 213, 105, 0.42);
-}
-
-.btn-secondary {
-    color: var(--blue-grey-darker);
-    background-color: var(--blue-grey);
-    border-color: var(--blue-grey);
+.btn-post {
+    border-radius: none;
+    border-right: 1px solid #d5d9ea;
 }
 
 /* Overriding Prosilver buttons with Bootstrap styles */
@@ -488,6 +493,14 @@ Topics, posts and PMs
     height: 120px;
     border-radius: 50%;
 }
+
+.format-buttons {
+    background-color: var(--blue-grey);
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #d5d9ea;
+}
+
 /*
 View forum
  */

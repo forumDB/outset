@@ -563,7 +563,6 @@ abbr[title] {
 .pull-right { float: right !important; }
 .pull-left { float: left !important; }
 .hide { display: none !important; }
-.show { display: block !important; }
 .invisible { visibility: hidden; }
 
 .text-hide {
@@ -2072,7 +2071,7 @@ dd.option {
 .topicreview {
 	padding-right: 5px;
 	overflow: auto;
-	height: 300px;
+	max-height: 300px;
 }
 
 .topicreview .postbody {
@@ -3237,19 +3236,11 @@ fieldset.submit-buttons input {
 ----------------------------------------*/
 
 /* Buttons used in the editor */
-.format-buttons {
-	margin: 15px 0 2px 0;
-}
-
 .format-buttons input, .format-buttons select {
 	vertical-align: middle;
 }
 
 /* Main message box */
-.message-box {
-	width: 80%;
-}
-
 .message-box textarea {
 	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
 	width: 450px;
@@ -3269,8 +3260,8 @@ fieldset.submit-buttons input {
 
 /* Emoticons panel */
 .smiley-box {
-	width: 18%;
-	float: right;
+	margin-bottom: 10px;
+	padding: 5px;
 }
 
 .smiley-box img {

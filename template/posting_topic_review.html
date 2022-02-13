@@ -1,10 +1,10 @@
 
-<h3 id="review" class="review">
+<h3 id="review" class="review mt-5">
 	<span class="right-box"><a href="#review" onclick="viewableArea(getElementById('topicreview'), true); var rev_text = getElementById('review').getElementsByTagName('a').item(0).firstChild; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'};">{L_EXPAND_VIEW}</a></span>
 	{L_TOPIC_REVIEW}{L_COLON} {TOPIC_TITLE}
 </h3>
 
-<div id="topicreview" class="topicreview">
+<div id="topicreview" class="topicreview p-2 bg-white rounded-3">
 <script>
 	bbcodeEnabled = {S_BBCODE_ALLOWED};
 </script>
@@ -19,7 +19,7 @@
 		<div class="inner">
 			{topic_review_row.L_DELETE_POST}
 	<!-- ELSE -->
-	<div class="post <!-- IF topic_review_row.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF topic_review_row.POST_ID == REPORTED_POST_ID --> reported<!-- ENDIF -->">
+	<div class="panel <!-- IF topic_review_row.POST_ID == REPORTED_POST_ID --> reported<!-- ENDIF -->">
 		<div class="inner">
 	<!-- ENDIF -->
 
@@ -30,14 +30,14 @@
 			<ul class="post-buttons">
 			<!-- IF topic_review_row.U_MCP_DETAILS -->
 				<li>
-					<a href="{topic_review_row.U_MCP_DETAILS}" title="{L_POST_DETAILS}" class="button button-icon-only">
+					<a href="{topic_review_row.U_MCP_DETAILS}" title="{L_POST_DETAILS}" class="btn btn-outline-dark">
 						<i class="icon fa-info fa-fw" aria-hidden="true"></i><span class="sr-only">{L_POST_DETAILS}</span>
 					</a>
 				<li>
 			<!-- ENDIF -->
 			<!-- IF topic_review_row.POSTER_QUOTE and topic_review_row.DECODED_MESSAGE -->
 				<li>
-					<a href="#postingbox" onclick="addquote({topic_review_row.POST_ID}, '{topic_review_row.POSTER_QUOTE}', '{LA_WROTE}', {post_id:{topic_review_row.POST_ID},time:{topic_review_row.POST_TIME},user_id:{topic_review_row.USER_ID}});" title="{L_QUOTE} {topic_review_row.POST_AUTHOR}" class="button button-icon-only">
+					<a href="#postingbox" onclick="addquote({topic_review_row.POST_ID}, '{topic_review_row.POSTER_QUOTE}', '{LA_WROTE}', {post_id:{topic_review_row.POST_ID},time:{topic_review_row.POST_TIME},user_id:{topic_review_row.USER_ID}});" title="{L_QUOTE} {topic_review_row.POST_AUTHOR}" class="btn btn-outline-dark">
 						<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">{L_QUOTE} {topic_review_row.POST_AUTHOR}</span>
 					</a>
 				</li>
@@ -79,11 +79,3 @@
 	</div>
 	<!-- END topic_review_row -->
 </div>
-
-<hr />
-
-<p>
-	<a href="<!-- IF S_MCP_REPORT -->#report<!-- ELSE -->#postingbox<!-- ENDIF -->" class="top">
-		<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i><span>{L_BACK_TO_TOP}</span>
-	</a>
-</p>
