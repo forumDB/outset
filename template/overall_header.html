@@ -297,16 +297,27 @@
 						<!-- IF S_REGISTERED_USER -->
 						<!-- IF S_DISPLAY_PM -->
 						<li class="nav-item" data-skip-responsive="true">
-							<a href="{U_PRIVATEMSGS}" role="menuitem" class="nav-link header-nav me-1">
-								<i class="icon fa-inbox fa-fw icon-xl d-flex justify-content-center align-items-center p-2" aria-hidden="true"></i><span class="sr-only">{L_PRIVATEMSGS}</span><strong class="badge<!-- IF not PRIVATE_MESSAGE_COUNT --> hidden<!-- ENDIF -->">{PRIVATE_MESSAGE_COUNT}</strong>
+							<a href="{U_PRIVATEMSGS}" role="menuitem" class="nav-link header-nav me-1 position-relative">
+								<i class="icon fa-inbox fa-fw icon-xl d-flex justify-content-center align-items-center p-2" aria-hidden="true"></i>
+								<span class="sr-only">{L_PRIVATEMSGS}</span>
+								<!-- IF PRIVATE_MESSAGE_COUNT -->
+								<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+									{PRIVATE_MESSAGE_COUNT}
+							  	</span>
+								<!-- ENDIF -->
 							</a>
 						</li>
 						<!-- ENDIF -->
 						<!-- IF S_NOTIFICATIONS_DISPLAY -->
 						<li class="nav-item mx-1 mx-md-0" data-skip-responsive="true">
 							<div class="dropdown">
-								<a href="#" class="nav-link header-nav me-1" role="button" id="notifications" data-bs-toggle="dropdown" aria-expanded="false">
+								<a href="#" class="nav-link header-nav me-1 position-relative" role="button" id="notifications" data-bs-toggle="dropdown" aria-expanded="false">
 									<i class="icon fa-bell fa-fw icon-xl d-flex justify-content-center align-items-center p-2" aria-hidden="true"></i><span class="sr-only">{U_VIEW_ALL_NOTIFICATIONS}</span>
+									<!-- IF NOTIFICATIONS_COUNT -->
+									<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+									{NOTIFICATIONS_COUNT}
+							  		</span>
+									<!-- ENDIF -->
 								</a>
 								<!-- INCLUDE notification_dropdown.html -->
 							</div>
