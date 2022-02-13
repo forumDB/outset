@@ -12,18 +12,18 @@
 	<div class="row mt-5 d-flex">
 		<div class="col-12 col-lg-6 pb-3">
 			<div class="card border-0 h-100 rounded-3">
-				<div class="card-header bg-transparent">
+				<div class="card-header profile-header">
 					<div class="col d-flex flex-column align-items-center">
 						<!-- IF AVATAR_IMG -->
-						<div class="profile-avatar">{AVATAR_IMG}</div>
+						<div class="profile-avatar text-center">{AVATAR_IMG}</div>
 						<!-- ELSE -->
-						<div class="profile-avatar"><img src="{T_THEME_PATH}/images/noavatar.svg"></div>
+						<div class="profile-avatar text-center"><img src="{T_THEME_PATH}/images/noavatar.svg"></div>
 						<!-- ENDIF -->
-						<div class="profile-user ms-3">
+						<div class="profile-user text-center">
 							<!-- EVENT memberlist_view_username_prepend --><!-- IF USER_COLOR --><span class="fs-2" style="color: {USER_COLOR}; font-weight: bold;"><!-- ELSE --><span class="fs-2"><!-- ENDIF -->{USERNAME}</span><!-- EVENT memberlist_view_username_append -->
 							<!-- EVENT memberlist_view_rank_avatar_before -->
-							<!-- IF RANK_TITLE --><p>{RANK_TITLE}</p><!-- ENDIF -->
-							<!-- IF RANK_IMG --><div>{RANK_IMG}</div><!-- ENDIF -->
+							<!-- IF RANK_TITLE --><p class="text-center">{RANK_TITLE}</p><!-- ENDIF -->
+							<!-- IF RANK_IMG --><div class="text-center">{RANK_IMG}</div><!-- ENDIF -->
 							<!-- EVENT memberlist_view_rank_avatar_after -->
 						</div>
 					</div>
@@ -60,7 +60,7 @@
 		</div>
 		<div class="col-12 col-lg-6 pb-3">
 			<div class="card border-0">
-				<div class="card-header bg-transparent text-center">
+				<div class="card-header profile-header text-center">
 					<p class="fw-bold fs-4">
 						{L_CONTACT_USER}
 					</p>
@@ -85,7 +85,7 @@
 		</div>
 		<div class="col-12 col-lg-6">
 			<div class="card border-0 mb-3 rounded-3">
-				<div class="card-header bg-transparent text-center">
+				<div class="card-header profile-header text-center">
 						<p class="fw-bold fs-4">
 							{L_USER_FORUM}
 						</p>
@@ -133,7 +133,7 @@
 		<!-- IF SIGNATURE -->
 		<div class="col-12 col-lg-6 mb-3 mb-lg-0">
 			<div class="card border-0">
-				<div class="card-header bg-transparent text-center">
+				<div class="card-header profile-header text-center">
 					<p class="fw-bold fs-4">
 						{L_SIGNATURE}
 					</p>

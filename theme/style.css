@@ -690,7 +690,7 @@ ul.cplist {
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    background-color: #f2f2f2;
+    background-color: #FFFFFF;
     margin-top: -40px;
 }
 
@@ -702,6 +702,16 @@ ul.cplist {
 .contact-box {
     padding: 10px;
     flex-grow: 1;
+}
+
+.profile-header {
+    background-color: var(--blue-grey);
+    border: 0;
+}
+
+.profile-header .fs-4 {
+    color: var(--blue-grey);
+    filter: brightness(70%);
 }
 
 /*
