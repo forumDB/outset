@@ -67,6 +67,14 @@
 
 	<link rel="stylesheet" href="https://use.typekit.net/bog2hdi.css">
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+	<script>
+		function showLogoText() {
+			var logoImage = document.getElementById("logoimg");
+			var logoAlt = document.getElementById("logoalt");
+			logoImage.style.display = "none";
+			logoAlt.style.display = "block";
+		}
+	</script>
 
 <!-- EVENT overall_header_head_append -->
 
@@ -285,7 +293,8 @@
 				</div>
 				<!-- EVENT overall_header_headerbar_before -->
 				<a id="logo" class="logo" href="{% if U_SITE_HOME %}{{ U_SITE_HOME }}{% else %}{{ U_INDEX }}{% endif %}" title="{% if U_SITE_HOME %}{{ L_SITE_HOME }}{% else %}{{ L_INDEX }}{% endif %}">
-					<img src="styles/outset/theme/images/logo.pn" alt="{SITENAME}" class="w-100 w-md-auto logo-text">
+					<img id="logoimg" src="styles/outset/theme/images/logo.png" alt="{SITENAME}" class="w-100 w-md-auto" style="display: block" onerror="showLogoText()">
+					<div id="logoalt" style="display: none;" class="logo-text">{SITENAME}</div>
 				</a>
 				<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 
