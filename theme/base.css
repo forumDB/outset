@@ -1612,7 +1612,6 @@ a {
 .username-coloured {
 	font-weight: bold;
 	display: inline !important;
-	padding: 0 !important;
 }
 
 /* Links on gradient backgrounds */

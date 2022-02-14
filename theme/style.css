@@ -388,7 +388,7 @@ li.row strong {
     background: none;
 }
 
-.moderator {
+.moderator a {
     font-size: 0.8em;
     border: 1px solid #ddd;
     border-radius: 4px;
