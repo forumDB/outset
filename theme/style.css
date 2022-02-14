@@ -388,6 +388,16 @@ li.row strong {
     background: none;
 }
 
+.moderator {
+    font-size: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
 /* Forum list column styles */
 .row .list-inner { padding: 4px 0; }
 
