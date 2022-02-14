@@ -1,35 +1,42 @@
-<div class="panel">
-	<div class="inner">
 	<!-- IF not S_AVATARS_ENABLED -->
 		<p>{L_AVATAR_FEATURES_DISABLED}</p>
 	<!-- ENDIF -->
 
-	<fieldset>
-	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
-		<dl>
-			<dt><label>{L_CURRENT_IMAGE}{L_COLON}</label><br /><span>{L_AVATAR_EXPLAIN}</span></dt>
-			<dd><!-- IF AVATAR -->{AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/no_avatar.gif" alt="" /><!-- ENDIF --></dd>
-			<dd><label for="avatar_delete"><input type="checkbox" name="avatar_delete" id="avatar_delete" /> {L_DELETE_AVATAR}</label></dd>
-		</dl>
+	<fieldset class="mb-5">
+		<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+		<h3>{L_CURRENT_IMAGE}</h3>
+		<p class="small">{L_AVATAR_EXPLAIN}</p>
+		<div class="d-flex align-items-center">
+			<div class="edit-avatar">
+				<!-- IF AVATAR -->{AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/noavatar.svg" alt="" /><!-- ENDIF -->
+			</div>
+			<!-- IF AVATAR -->
+			<div class="ms-4">
+				<input type="submit" class="btn btn-outline-dark" name="avatar_delete" id="avatar_delete" value="{L_DELETE_AVATAR}" />
+			</div>
+			<!-- ENDIF -->
+		</div>
 	</fieldset>
+
 	<h3>{L_AVATAR_SELECT}</h3>
 	<fieldset>
-		<dl>
-			<dt><label>{L_AVATAR_TYPE}{L_COLON}</label></dt>
-			<dd><select name="avatar_driver" id="avatar_driver" data-togglable-settings="true">
+		<div class="mb-3">
+			<label for="avatar_driver" class="form-label">{L_AVATAR_TYPE}</label>
+			<select name="avatar_driver" id="avatar_driver" data-togglable-settings="true" class="w-100">
 				<!-- BEGIN avatar_drivers -->
 				<option value="{avatar_drivers.DRIVER}"<!-- IF avatar_drivers.SELECTED --> selected="selected"<!-- ENDIF --> data-toggle-setting="#avatar_option_{avatar_drivers.DRIVER}">{avatar_drivers.L_TITLE}</option>
 				<!-- END avatar_drivers -->
-			</select></dd>
-		</dl>
+			</select>
+		</div>
 	</fieldset>
-	<div id="avatar_options">
+
+	<div id="avatar_options" class="card border-0">
 <!-- BEGIN avatar_drivers -->
-	<div id="avatar_option_{avatar_drivers.DRIVER}">
+	<div id="avatar_option_{avatar_drivers.DRIVER}" class="card-body">
 	<noscript>
 	<h3 class="avatar_section_header">{avatar_drivers.L_TITLE}</h3>
 	</noscript>
-	<p>{avatar_drivers.L_EXPLAIN}</p>
+	<p class="fw-bold fs-5">{avatar_drivers.L_EXPLAIN}</p>
 
 	<fieldset>
 	{avatar_drivers.OUTPUT}
@@ -38,9 +45,7 @@
 <!-- END avatar_drivers -->
 	</div>
 <!-- IF not S_GROUP_MANAGE -->
-	<fieldset class="submit-buttons">
-		<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+	<fieldset class="submit-buttons mt-3">
+		<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-outset" />
 	</fieldset>
 <!-- ENDIF -->
-	</div>
-</div>

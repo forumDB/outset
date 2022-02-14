@@ -1,11 +1,12 @@
-<dl>
-	<dt><label for="avatar_upload_file">{L_UPLOAD_AVATAR_FILE}{L_COLON}</label></dt>
-	<dd><input type="hidden" name="MAX_FILE_SIZE" value="{AVATAR_UPLOAD_SIZE}" /><input type="file" name="avatar_upload_file" id="avatar_upload_file" class="inputbox autowidth" accept="{{ AVATAR_ALLOWED_EXTENSIONS }}" /></dd>
-</dl>
+<div class="mb-3">
+	<label for="avatar_upload_file" class="form-label">{L_UPLOAD_AVATAR_FILE}</label>
+	<input class="form-control" type="file" name="avatar_upload_file" id="avatar_upload_file" accept="{{ AVATAR_ALLOWED_EXTENSIONS }}">
+</div>
 
 <!-- IF S_UPLOAD_AVATAR_URL -->
-	<dl>
-		<dt><label for="avatar_upload_url">{L_UPLOAD_AVATAR_URL}{L_COLON}</label><br /><span>{L_UPLOAD_AVATAR_URL_EXPLAIN}</span></dt>
-		<dd><input type="url" name="avatar_upload_url" id="avatar_upload_url" value="" class="inputbox" /></dd>
-	</dl>
+<div class="mb-3">
+	<label for="avatar_upload_url" class="form-label">{L_UPLOAD_AVATAR_URL}</label>
+	<input type="url" class="form-control" name="avatar_upload_url" id="avatar_upload_url" value="" aria-describedby="url_explain">
+	<div id="url_explain" class="form-text">{L_UPLOAD_AVATAR_URL_EXPLAIN}</div>
+</div>
 <!-- ENDIF -->
