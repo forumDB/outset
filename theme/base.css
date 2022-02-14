@@ -1710,7 +1710,6 @@ a.forumtitle:hover, a.topictitle:hover {
 }
 
 .top {
-	font-size: 12px;
 	text-decoration: none;
 	margin-top: 10px;
 }
@@ -3494,15 +3493,6 @@ h3 {
 --------------------------------------------------------------
 Colours and backgrounds for links.css
 -------------------------------------------------------------- */
-
-/* Links on gradient backgrounds */
-.forumbg .header a, th a {
-	color: #FFFFFF;
-}
-
-.forumbg .header a:hover, th a:hover {
-	color: #A8D8FF;
-}
 
 /* Notification mark read link */
 .dropdown-extended a.mark_read {
