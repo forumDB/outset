@@ -370,6 +370,24 @@ li.row strong {
     font-size: 0.7em;
 }
 
+.subforum {
+    font-size: 0.8em;
+    color: #000;
+    background-color: #f2efef;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+
+.subforum:hover {
+    border-color: #ddd;
+    background: none;
+}
+
 /* Forum list column styles */
 .row .list-inner { padding: 4px 0; }
 

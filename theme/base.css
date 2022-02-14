@@ -1669,7 +1669,6 @@ a.forumtitle:hover, a.topictitle:hover {
 .row-item .forumtitle:hover,
 .row-item .topictitle:hover,
 .row-item .lastsubject:hover,
-.row-item .subforum:hover,
 .row-item a.username:hover,
 .row-item a.username-coloured:hover {
 	filter: brightness(65%);
