@@ -415,9 +415,9 @@
 				<!-- IF .quickmod -->
 				<li class="nav-item dropdown">
 					<a href="#" class="btn btn-secondary dropdown-toggle me-1" id="quickmod" title="{L_QUICK_MOD}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						<i class="icon fa-gavel fa-fw" aria-hidden="true"></i> <span class="sr-only">{L_QUICK_MOD}</span>
+						<i class="icon fa-gavel fa-fw" aria-hidden="true"></i> <span id="quickmod-explain" class="sr-only">{L_QUICK_MOD}</span>
 					</a>
-					<ul class="dropdown-menu" aria-labelledby="tools">
+					<ul class="dropdown-menu" aria-labelledby="quickmod-explain">
 						<!-- BEGIN quickmod -->
 						<!-- DEFINE $QUICKMOD_AJAX = (quickmod.VALUE in ['lock', 'unlock', 'delete_topic', 'restore_topic', 'make_normal', 'make_sticky', 'make_announce', 'make_global']) -->
 						<li>

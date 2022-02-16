@@ -501,8 +501,8 @@ Topics, posts and PMs
     }
     .postprofile .avatar img {
         display: block;
-        height: auto !important;
-        max-width: 120px;
+        width: auto !important;
+        max-height: 120px;
     }
 }
 
