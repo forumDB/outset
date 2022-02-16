@@ -4,38 +4,31 @@
 
 <h2>{L_TITLE}</h2>
 
-<div class="panel">
-	<div class="inner">
-
 	<p>{L_FRIENDS_EXPLAIN}</p>
 
 	<fieldset class="fields2">
 	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
 	<!-- EVENT ucp_friend_list_before -->
-	<dl>
-		<dt><label <!-- IF S_USERNAME_OPTIONS -->for="usernames"<!-- ENDIF -->>{L_YOUR_FRIENDS}{L_COLON}</label><br /><span>{L_YOUR_FRIENDS_EXPLAIN}</span></dt>
-		<dd>
+		<div class="mb-4">
+			<label class="form-label" <!-- IF S_USERNAME_OPTIONS -->for="usernames"<!-- ENDIF -->>{L_YOUR_FRIENDS}{L_COLON}</label>
 			<!-- IF S_USERNAME_OPTIONS -->
-				<select name="usernames[]" id="usernames" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
+			<select name="usernames[]" id="usernames" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
 			<!-- ELSE -->
-				<strong>{L_NO_FRIENDS}</strong>
+			<strong>{L_NO_FRIENDS}</strong>
 			<!-- ENDIF -->
-		</dd>
-	</dl>
-	<!-- EVENT ucp_friend_list_after -->
-	<dl>
-		<dt><label for="add">{L_ADD_FRIENDS}{L_COLON}</label><br /><span>{L_ADD_FRIENDS_EXPLAIN}</span></dt>
-		<dd><textarea name="add" id="add" rows="3" cols="30" class="inputbox">{USERNAMES}</textarea></dd>
-		<dd><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
-	</dl>
+			<div id="friendHelp" class="form-text">{L_YOUR_FRIENDS_EXPLAIN}</div>
+		</div>
+		<!-- EVENT ucp_friend_list_after -->
+		<div class="mb-2">
+			<label for="add" class="form-label">{L_ADD_FRIENDS}{L_COLON}</label>
+			<textarea name="add" id="add" rows="3" cols="30" class="form-control" aria-describedby="friendHelp">{USERNAMES}</textarea>
+			<div id="friendHelp" class="form-text"><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong> {L_ADD_FRIENDS_EXPLAIN}</div>
+		</div>
 	</fieldset>
-
-	</div>
-</div>
 
 <fieldset class="submit-buttons">
 	{S_HIDDEN_FIELDS}
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-outset" />
 	{S_FORM_TOKEN}
 </fieldset>
 </form>
