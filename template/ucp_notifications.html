@@ -3,8 +3,6 @@
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
 <h2>{TITLE}</h2>
-<div class="panel">
-	<div class="inner">
 
 		<p>{TITLE_EXPLAIN}</p>
 
@@ -42,13 +40,17 @@
 			<!-- IF .notification_list -->
 				<div class="action-bar bar-top">
 					<div class="pagination">
-						<!-- IF U_MARK_ALL --><a href="{U_MARK_ALL}" class="mark">{L_NOTIFICATIONS_MARK_ALL_READ}</a> &bull; <!-- ENDIF -->
-						{L_NOTIFICATIONS} [<strong>{TOTAL_COUNT}</strong>]
-						<!-- IF .pagination -->
-							<!-- INCLUDE pagination.html -->
-						<!-- ELSE -->
-							 &bull; {PAGE_NUMBER}
+						<!-- IF U_MARK_ALL -->
+						<a href="{U_MARK_ALL}" class="btn btn-secondary me-3" accesskey="m" data-ajax="mark_topics_read" title="{L_NOTIFICATIONS_MARK_ALL_READ}"><i class="icon fa-check fa-fw icon-lg" aria-hidden="true"></i> <span class="sr-only">{L_NOTIFICATIONS_MARK_ALL_READ}</span></a>
 						<!-- ENDIF -->
+						<div class="d-flex flex-column">
+							<p class="mb-0">{L_NOTIFICATIONS} (<strong>{TOTAL_COUNT}</strong>)</p>
+							<!-- IF .pagination -->
+								<!-- INCLUDE pagination.html -->
+							<!-- ELSE -->
+							<p class="mb-0">{PAGE_NUMBER}</p>
+							<!-- ENDIF -->
+						</div>
 					</div>
 				</div>
 
@@ -57,14 +59,13 @@
 					<li class="header">
 						<dl>
 							<dt><div class="list-inner">{L_NOTIFICATIONS}</div></dt>
-							<dd class="mark">{L_MARK_READ}</dd>
 						</dl>
 					</li>
 				</ul>
 				<ul class="topiclist cplist two-columns">
 					<!-- BEGIN notification_list -->
 						<li class="row<!-- IF notification_list.UNREAD --> bg3<!-- ELSE --><!-- IF notification_list.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- ENDIF --><!-- IF notification_list.STYLING --> {notification_list.STYLING}<!-- ENDIF -->">
-							<dl>
+							<dl class="d-flex justify-content-between">
 								<dt>
 									<div class="list-inner">
 										<!-- IF notification_list.AVATAR -->{notification_list.AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/no_avatar.gif" alt="" /><!-- ENDIF -->
@@ -79,7 +80,11 @@
 									</div>
 								</dt>
 
-								<dd class="mark">&nbsp;<input type="checkbox" name="mark[]" value="{notification_list.NOTIFICATION_ID}"<!-- IF not notification_list.UNREAD --> disabled="disabled"<!-- ENDIF --> /> <dfn>{L_MARK_READ}</dfn>&nbsp;</dd>
+								<dd class="d-flex align-items-center">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="mark[]" value="{notification_list.NOTIFICATION_ID}"<!-- IF not notification_list.UNREAD --> disabled="disabled"<!-- ENDIF -->><dfn>{L_MARK_READ}</dfn>
+									</div>
+								</dd>
 							</dl>
 						</li>
 					<!-- END notification_list -->
@@ -88,12 +93,19 @@
 
 			<div class="action-bar bar-bottom">
 				<div class="pagination">
-					{L_NOTIFICATIONS} [<strong>{TOTAL_COUNT}</strong>]
-					<!-- IF .pagination -->
-						<!-- INCLUDE pagination.html -->
-					<!-- ELSE -->
-						  &bull; {PAGE_NUMBER}
-					<!-- ENDIF -->
+					<div class="pagination">
+						<!-- IF U_MARK_ALL -->
+						<a href="{U_MARK_ALL}" class="btn btn-secondary me-3" accesskey="m" data-ajax="mark_topics_read" title="{L_NOTIFICATIONS_MARK_ALL_READ}"><i class="icon fa-check fa-fw icon-lg" aria-hidden="true"></i> <span class="sr-only">{L_NOTIFICATIONS_MARK_ALL_READ}</span></a>
+						<!-- ENDIF -->
+						<div class="d-flex flex-column">
+							<p class="mb-0">{L_NOTIFICATIONS} (<strong>{TOTAL_COUNT}</strong>)</p>
+							<!-- IF .pagination -->
+							<!-- INCLUDE pagination.html -->
+							<!-- ELSE -->
+							<p class="mb-0">{PAGE_NUMBER}</p>
+							<!-- ENDIF -->
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -102,14 +114,12 @@
 			<!-- ENDIF -->
 
 		<!-- ENDIF -->
-	</div>
-</div>
 
 <!-- IF .notification_types or .notification_list -->
-<fieldset class="display-actions">
+<fieldset class="display-actions mt-5">
 	<input type="hidden" name="form_time" value="{FORM_TIME}" />
 	{S_HIDDEN_FIELDS}
-	<input type="submit" name="submit" value="<!-- IF MODE == 'notification_options' -->{L_SUBMIT}<!-- ELSE -->{L_MARK_READ}<!-- ENDIF -->" class="button1" />
+	<input type="submit" name="submit" value="<!-- IF MODE == 'notification_options' -->{L_SUBMIT}<!-- ELSE -->{L_MARK_READ}<!-- ENDIF -->" class="btn btn-outset" />
 	<div><a href="#" onclick="$('#ucp input:checkbox').prop('checked', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="$('#ucp input:checkbox').prop('checked', false); return false;">{L_UNMARK_ALL}</a></div>
 	{S_FORM_TOKEN}
 </fieldset>
