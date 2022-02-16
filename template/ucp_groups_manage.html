@@ -4,9 +4,6 @@
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
-<div class="panel">
-	<div class="inner">
-
 	<!-- IF S_ERROR -->
 	<fieldset>
 		<p class="error">{ERROR_MSG}</p>
@@ -44,11 +41,6 @@
 		<!-- ENDIF -->
 		</fieldset>
 
-	</div>
-</div>
-
-<div class="panel">
-	<div class="inner">
 	<h3>{L_GROUP_SETTINGS_SAVE}</h3>
 
 	<fieldset>
@@ -67,21 +59,18 @@
 	</dl>
 	</fieldset>
 
-	</div>
-</div>
-
 <!-- INCLUDE ucp_avatar_options.html -->
 
 <fieldset class="submit-buttons">
 	{S_HIDDEN_FIELDS}
-	<input type="submit" name="update" value="{L_SUBMIT}" class="button1" />
+	<input type="submit" name="update" value="{L_SUBMIT}" class="btn btn-outset" />
 	{S_FORM_TOKEN}
 </fieldset>
 
 <!-- ELSEIF S_LIST -->
 
 	<!-- IF .leader -->
-	<table class="table1">
+	<table class="table bg-white align-middle rounded-3">
 	<thead>
 	<tr>
 		<th class="name">{L_GROUP_LEAD}</th>
@@ -107,7 +96,7 @@
 
 	<!-- BEGIN member -->
 		<!-- IF member.S_PENDING -->
-			<table class="table1">
+			<table class="table bg-white align-middle rounded-3">
 			<thead>
 			<tr>
 				<th class="name">{L_GROUP_PENDING}</th>
@@ -123,7 +112,7 @@
 				</tbody>
 				</table>
 			<!-- ENDIF -->
-			<table class="table1">
+			<table class="table bg-white align-middle rounded-3">
 			<thead>
 			<tr>
 				<th class="name">{L_GROUP_APPROVED}</th>
@@ -144,7 +133,7 @@
 			</tr>
 		<!-- ENDIF -->
 	<!-- BEGINELSE -->
-		<table class="table1">
+		<table class="table bg-white align-middle rounded-3">
 		<thead>
 		<tr>
 			<th class="name">{L_MEMBERS}</th>
@@ -166,17 +155,11 @@
 	</div>
 	<!-- ENDIF -->
 
-	</div>
-</div>
-
 <fieldset class="display-actions">
 	<select name="action"><option value="">{L_SELECT_OPTION}</option>{S_ACTION_OPTIONS}</select>
-	<input class="button2" type="submit" name="update" value="{L_SUBMIT}" />
+	<input class="btn btn-secondary" type="submit" name="update" value="{L_SUBMIT}" />
 	<div><a href="#" onclick="marklist('ucp', 'mark', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('ucp', 'mark', false); return false;">{L_UNMARK_ALL}</a></div>
 </fieldset>
-
-<div class="panel">
-	<div class="inner">
 
 	<h3>{L_ADD_USERS}</h3>
 
@@ -197,11 +180,8 @@
 	</dl>
 	</fieldset>
 
-	</div>
-</div>
-
 <fieldset class="submit-buttons">
-	<input class="button1" type="submit" name="addusers" value="{L_SUBMIT}" />
+	<input class="btn btn-outset" type="submit" name="addusers" value="{L_SUBMIT}" />
 	{S_FORM_TOKEN}
 </fieldset>
 
@@ -212,23 +192,24 @@
 			<li class="header">
 				<dl>
 					<dt><div class="list-inner">{L_GROUP_LEADER}</div></dt>
-					<dd class="info"><span>{L_OPTIONS}</span></dd>
 				</dl>
 			</li>
 		</ul>
 		<ul class="topiclist cplist two-long-columns responsive-show-all">
 
 		<!-- BEGIN leader -->
-		<li class="row<!-- IF attachrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<dl>
+		<li class="row">
+			<dl class="d-flex justify-content-between">
 				<dt>
 					<div class="list-inner">
 						<a href="{leader.U_EDIT}" class="topictitle"<!-- IF leader.GROUP_COLOUR --> style="color: #{leader.GROUP_COLOUR};"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
 						<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
 					</div>
 				</dt>
-				<dd class="option"><span><a href="{leader.U_EDIT}" >{L_EDIT}</a></span></dd>
-				<dd class="option"><span><a href="{leader.U_LIST}">{L_GROUP_LIST}</a></span></dd>
+				<dd class="option d-flex p-0">
+					<a href="{leader.U_EDIT}" class="forum-description m-0">{L_EDIT}</a>
+					<a href="{leader.U_LIST}" class="forum-description m-0">{L_GROUP_LIST}</a>
+				</dd>
 			</dl>
 		</li>
 		<!-- END leader -->
