@@ -1794,7 +1794,6 @@ ul.topiclist dt, ul.topiclist dd {
 }
 
 ul.topiclist dt {
-	width: 100%;
 	margin-right: -440px;
 	font-size: 1.1em;
 }

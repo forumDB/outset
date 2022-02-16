@@ -27,7 +27,7 @@ a:hover,a:active,a:focus {
 .text-main {color: var(--main);}
 .bg-lesser {background-color: var(--lesser);}
 .text-lesser-darker {color: var(--lesser-darker);}
-.bg-blue-grey {backgorund-color: var(--blue-grey);}
+.bg-blue-grey {background-color: var(--blue-grey);}
 
 input[type="radio"]:checked+label { font-weight: bold; }
 
@@ -51,6 +51,10 @@ h3 { color:var(--main);}
 /* */
 /* Buttons */
 /* */
+.btn {
+    font-weight: 600;
+}
+
 .btn-primary {
     color: var(--lesser-darker);
     background-color: var(--lesser);
@@ -652,6 +656,12 @@ User CP
     background-color: #eff5ff;
     border-radius: 10px;
     padding: 20px 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .cp-menu, .cp-main {
+        width: 100%;
+    }
 }
 
 .cp-main .content {
