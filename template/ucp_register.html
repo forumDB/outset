@@ -12,7 +12,7 @@
 	}
 </script>
 
-<div class="container w-100 w-lg-75">
+<div class="container w-100 w-md-50">
 	<div class="row min-vh-100 d-flex flex-column justify-content-center">
 		<div class="col d-flex flex-column justify-content-center">
 			{% if PROVIDER_TEMPLATE_FILE %}
@@ -33,7 +33,7 @@
 						<a href="{% if U_SITE_HOME %}{{ U_SITE_HOME }}{% else %}{{ U_INDEX }}{% endif %}" title="{% if U_SITE_HOME %}{{ L_SITE_HOME }}{% else %}{{ L_INDEX }}{% endif %}"><i class="icon fa-arrow-left fa-fw fs-1 fw-light" aria-hidden="true"></i></a>
 						<h2 class="login-title my-4 fw-bold text-center">{{ SITENAME }} - {{ lang('REGISTRATION') }}</h2>
 					</div>
-					<div class="bg-white p-4 rounded-3">
+					<div class="bg-white p-4 rounded-3 mb-3">
 
 						<!-- NEW FORM -->
 
@@ -43,7 +43,6 @@
 							<dl><dd><strong>{L_REG_COND}</strong></dd></dl>
 							<!-- ENDIF -->
 							<!-- EVENT ucp_register_credentials_before -->
-							<div class="col-12 col-md-6">
 								<div class="mb-3">
 									<label for="username" class="form-label">{L_USERNAME}</label>
 									<input type="text" class="form-control" aria-describedby="usernameExplain" name="username" id="username" value="{USERNAME}" title="{L_USERNAME}">
@@ -70,8 +69,6 @@
 
 								<!-- INCLUDE timezone_option.html -->
 
-							</div>
-							<div class="col-12 col-md-6">
 								<!-- EVENT ucp_register_credentials_after -->
 								<!-- EVENT ucp_register_profile_fields_before -->
 								<!-- IF .profile_fields -->
@@ -90,7 +87,6 @@
 								<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
 								<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 								<!-- ENDIF -->
-							</div>
 						<!-- EVENT ucp_register_profile_fields_after -->
 						</fieldset>
 						<!-- IF S_COPPA -->
