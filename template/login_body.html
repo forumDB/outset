@@ -24,8 +24,7 @@
 				<!-- ENDIF -->
 				<!-- IF S_DISPLAY_FULL_LOGIN -->
 				<!-- IF S_AUTOLOGIN_ENABLED -->
-				<div class="d-flex justify-content-between">
-					<div>
+				<div>
 						<div class="mb-1 form-check">
 							<input type="checkbox" class="form-check-input" id="autologin" name="autologin">
 							<label class="form-check-label" for="autologin">{L_LOG_ME_IN}</label>
@@ -36,20 +35,19 @@
 							<label class="form-check-label" for="viewonline">{L_HIDE_ME}</label>
 						</div>
 						<!-- ENDIF -->
-					</div>
-					<div>
-						<!-- IF U_SEND_PASSWORD --><a href="{U_SEND_PASSWORD}" class="align-self-end mt-1">{L_FORGOT_PASS}</a><!-- ENDIF -->
-						<!-- IF U_RESEND_ACTIVATION --><a href="{U_RESEND_ACTIVATION}" class="align-self-end mt-1">{L_RESEND_ACTIVATION}</a><!-- ENDIF -->
-					</div>
+						<div class="d-grid gap-2">
+							{S_HIDDEN_FIELDS}
+							<input type="submit" class="btn btn-primary" name="login" value="{L_LOGIN}">
+						</div>
+						<div>
+							<!-- IF U_SEND_PASSWORD --><a href="{U_SEND_PASSWORD}" class="align-self-end mt-1">{L_FORGOT_PASS}</a><!-- ENDIF -->
+							<!-- IF U_RESEND_ACTIVATION --><a href="{U_RESEND_ACTIVATION}" class="align-self-end mt-1">{L_RESEND_ACTIVATION}</a><!-- ENDIF -->
+						</div>
+					{S_LOGIN_REDIRECT}
+					{S_FORM_TOKEN_LOGIN}
+
 				</div>
 
-
-				{S_LOGIN_REDIRECT}
-				{S_FORM_TOKEN_LOGIN}
-				<div class="d-grid gap-2">
-					{S_HIDDEN_FIELDS}
-					<input type="submit" class="btn btn-primary" name="login" value="{L_LOGIN}">
-				</div>
 				</fieldset>
 			</form>
 
