@@ -1564,7 +1564,7 @@ ul.linklist:after,
 }
 
 .notification_text {
-	margin-left: 58px;
+	font-size: 0.8em;
 }
 
 /* Navbar specific list items

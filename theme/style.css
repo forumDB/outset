@@ -804,6 +804,10 @@ ul.navbar {
     }
 }
 
+.notification-dropdown {
+    width: 400px;
+}
+
 /* UCP */
 .edit-avatar img {
     width: 100px;
