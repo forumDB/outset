@@ -815,6 +815,8 @@ ul.navbar {
     border-radius: 50px;
 }
 
-
+.topic-type input[type="radio"]:checked+label {
+    background-color: var(--main);
+}
 
 

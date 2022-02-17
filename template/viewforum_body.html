@@ -5,7 +5,7 @@
 <!-- IF FORUM_DESC or MODERATORS or U_MCP -->
 <div>
 	<!-- NOTE: remove the style="display: none" when you want to have the forum description on the forum body -->
-	<!-- IF FORUM_DESC --><div style="display: none !important;">{FORUM_DESC}<br /></div><!-- ENDIF -->
+	<!-- IF FORUM_DESC --><div style="display: none !important;">{FORUM_DESC}</div><!-- ENDIF -->
 	<!-- IF MODERATORS --><p><strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->{L_COLON}</strong> {MODERATORS}</p><!-- ENDIF -->
 </div>
 <!-- ENDIF -->
@@ -163,7 +163,7 @@
 		<li class="row<!-- IF topicrow.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF topicrow.S_POST_GLOBAL --> global-announce<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
 			<!-- EVENT viewforum_body_topic_row_prepend -->
 			<dl class="row-item d-flex justify-content-between {topicrow.TOPIC_IMG_STYLE}">
-				<dt class="d-flex" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+				<dt class="d-flex flex-grow-1" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 					<!-- IF topicrow.S_UNREAD_TOPIC and not S_IS_BOT --><a href="{topicrow.U_NEWEST_POST}" class="row-item-link"></a><!-- ENDIF -->
 					<div class="list-inner d-flex flex-column justify-content-center">
 						<!-- EVENT topiclist_row_prepend -->
@@ -188,7 +188,6 @@
 								<i class="icon fa-exclamation fa-fw icon-red" aria-hidden="true"></i><span class="sr-only">{L_TOPIC_REPORTED}</span>
 							</a>
 						<!-- ENDIF -->
-						<br />
 						<!-- EVENT topiclist_row_topic_title_after -->
 
 						<!-- IF not S_IS_BOT -->
