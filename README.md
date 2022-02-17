@@ -19,6 +19,6 @@
 
 ## Screenshots and links
 - **Demo:** [forumDB Demo Board](https://phpbb.forumdb.net)
-- **phpBB Development Thread:** TBA
+- **phpBB Development Thread:** [Outset for phpBB 3.3.5](https://www.phpbb.com/community/viewtopic.php?f=691&t=2614196)
 
 ![Screenshots](https://forumdb.net/assets/preview-outset.png)
