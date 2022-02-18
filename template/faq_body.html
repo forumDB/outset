@@ -13,37 +13,38 @@
 				<div class="column2">
 			<!-- ENDIF -->
 
-			<dl class="faq">
-				<dt><strong>{faq_block.BLOCK_TITLE}</strong></dt>
+			<ul class="list-group list-group-flush"">
+					<li class="list-group-item"><strong>{faq_block.BLOCK_TITLE}</strong></li>
 				<!-- BEGIN faq_row -->
-					<dd><a href="#f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">{faq_block.faq_row.FAQ_QUESTION}</a></dd>
+					<a href="#f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}" class="list-group-item list-group-item-action">{faq_block.faq_row.FAQ_QUESTION}</a>
 				<!-- END faq_row -->
-			</dl>
+			</ul>
 		<!-- END faq_block -->
 		</div>
 	</div>
 </div>
 
 <!-- BEGIN faq_block -->
-	<div class="panel <!-- IF faq_block.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-		<div class="inner">
-
-		<div class="content">
-			<h2 class="faq-title">{faq_block.BLOCK_TITLE}</h2>
-			<!-- BEGIN faq_row -->
-				<dl class="faq">
-					<dt id="f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}"><strong>{faq_block.faq_row.FAQ_QUESTION}</strong></dt>
-					<dd>{faq_block.faq_row.FAQ_ANSWER}</dd>
-				</dl>
-				<a href="#faqlinks" class="top">
-					<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i><span>{L_BACK_TO_TOP}</span>
-				</a>
-				<!-- IF not faq_block.faq_row.S_LAST_ROW --><hr class="dashed" /><!-- ENDIF -->
-			<!-- END faq_row -->
-		</div>
-
+<h2>{faq_block.BLOCK_TITLE}</h2>
+<div class="accordion" id="{faq_block.BLOCK_TITLE}">
+	<!-- BEGIN faq_row -->
+	<div class="accordion-item border-0">
+		<h2 class="accordion-header" id="f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">
+			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f{faq_block.S_ROW_COUNT}-r{faq_block.faq_row.S_ROW_COUNT}" aria-expanded="true" aria-controls="f{faq_block.S_ROW_COUNT}-r{faq_block.faq_row.S_ROW_COUNT}">
+				{faq_block.faq_row.FAQ_QUESTION}
+			</button>
+		</h2>
+		<div id="f{faq_block.S_ROW_COUNT}-r{faq_block.faq_row.S_ROW_COUNT}" class="accordion-collapse collapse show" aria-labelledby="f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}" data-bs-parent="{faq_block.BLOCK_TITLE}">
+			<div class="accordion-body">
+				<p>{faq_block.faq_row.FAQ_ANSWER}</p>
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i><span>{L_BACK_TO_TOP}</span>
+			</div>
 		</div>
 	</div>
+	<!-- END faq_row -->
+</div>
+<!-- END faq_block -->
+
 <!-- END faq_block -->
 
 <!-- INCLUDE jumpbox.html -->
