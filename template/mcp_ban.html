@@ -38,56 +38,52 @@
 
 <h2>{L_TITLE}</h2>
 
-<div class="panel">
-	<div class="inner">
-
 	<h3>{L_TITLE}</h3>
 	<p>{L_EXPLAIN}</p>
 
 	<fieldset>
 	<!-- EVENT mcp_ban_fields_before -->
-	<dl>
-		<dt><label for="ban">{L_BAN_CELL}{L_COLON}</label></dt>
-		<dd><label for="ban"><textarea name="ban" id="ban" class="inputbox" cols="40" rows="3">{BAN_QUANTIFIER}</textarea></label></dd>
-		<!-- IF S_USERNAME_BAN --><dd><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd><!-- ENDIF -->
-	</dl>
-	<dl>
-		<dt><label for="banlength">{L_BAN_LENGTH}{L_COLON}</label></dt>
-		<dd><label for="banlength"><select name="banlength" id="banlength" onchange="if(this.value==-1){document.getElementById('banlengthother').style.display = 'block';}else{document.getElementById('banlengthother').style.display='none';}">{S_BAN_END_OPTIONS}</select></label></dd>
-		<dd id="banlengthother" style="display: none;"><label><input type="text" name="banlengthother" class="inputbox" /><br /><span>{L_YEAR_MONTH_DAY}</span></label></dd>
-	</dl>
-	<dl>
-		<dt><label for="banreason">{L_BAN_REASON}{L_COLON}</label></dt>
-		<dd><input name="banreason" id="banreason" type="text" class="inputbox" maxlength="255" /></dd>
-	</dl>
-	<dl>
-		<dt><label for="bangivereason">{L_BAN_GIVE_REASON}{L_COLON}</label></dt>
-		<dd><input name="bangivereason" id="bangivereason" type="text" class="inputbox" maxlength="255" /></dd>
-	</dl>
+		<div class="mb-3">
+			<label for="ban" class="form-label">{L_BAN_CELL}</label>
+			<textarea class="form-control" rows="3" name="ban" id="ban">{BAN_QUANTIFIER}</textarea>
+			<!-- IF S_USERNAME_BAN --><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong><!-- ENDIF -->
+		</div>
+		<div class="mb-3">
+			<label for="banlength" class="form-label">{L_BAN_LENGTH}</label>
+			<select class="form-control" name="banlength" id="banlength" onchange="if(this.value==-1){document.getElementById('banlengthother').style.display = 'block';}else{document.getElementById('banlengthother').style.display='none';}">{S_BAN_END_OPTIONS}</select>
+			<div id="banlengthother" class="mt-2" style="display: none;"><label><input type="text" name="banlengthother" class="form-control" /><span>{L_YEAR_MONTH_DAY}</span></label></div>
+		</div>
+		<div class="mb-3">
+			<label for="banreason" class="form-label">{L_BAN_REASON}</label>
+			<input type="text" class="form-control" name="banreason" id="banreason" maxlength="255">
+		</div>
+		<div class="mb-3">
+			<label for="bangivereason" class="form-label">{L_BAN_GIVE_REASON}</label>
+			<input type="text" class="form-control" name="bangivereason" id="bangivereason" maxlength="255">
+		</div>
 
-	<hr />
+		<hr />
 
-	<dl>
-		<dt><label for="banexclude0">{L_BAN_EXCLUDE}{L_COLON}</label><br /><span>{L_BAN_EXCLUDE_EXPLAIN}</span></dt>
-		<dd>
-			<label for="banexclude1"><input type="radio" name="banexclude" id="banexclude1" value="1" /> {L_YES}</label>
-			<label for="banexclude0"><input type="radio" name="banexclude" id="banexclude0" value="0" checked="checked" /> {L_NO}</label>
-		</dd>
-	</dl>
+		<div class="mb-3">
+			<div class="form-label mb-0">{L_BAN_EXCLUDE}</div>
+			<div class="form-text mb-1">{L_BAN_EXCLUDE_EXPLAIN}</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="banexclude" id="banexclude1" value="1" />
+				<label class="form-check-label" for="banexclude1">{L_YES}</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="banexclude" id="banexclude0" value="0" checked="checked" />
+				<label class="form-check-label" for="banexclude0">{L_NO}</label>
+			</div>
+		</div>
 	<!-- EVENT mcp_ban_fields_after -->
 	</fieldset>
 
-	</div>
-</div>
-
-<fieldset class="submit-buttons">
+<fieldset class="submit-buttons mb-5">
 	{S_HIDDEN_FIELDS}
-	<input type="submit" name="bansubmit" value="{L_SUBMIT}" class="button1" />
+	<input type="submit" name="bansubmit" value="{L_SUBMIT}" class="btn btn-outset" />
 	{S_FORM_TOKEN}
 </fieldset>
-
-<div class="panel">
-	<div class="inner">
 
 	<h3>{L_UNBAN_TITLE}</h3>
 	<p>{L_UNBAN_EXPLAIN}</p>
@@ -114,20 +110,14 @@
 		<!-- EVENT mcp_ban_unban_after -->
 		</fieldset>
 
-		</div>
-	</div>
-
 	<fieldset class="submit-buttons">
 		{S_HIDDEN_FIELDS}
-		<input type="submit" name="unbansubmit" value="{L_SUBMIT}" class="button1" />
+		<input type="submit" name="unbansubmit" value="{L_SUBMIT}" class="btn btn-outset" />
 	</fieldset>
 
 	<!-- ELSE -->
 
 		<p><strong>{L_NO_BAN_CELL}</strong></p>
-
-		</div>
-	</div>
 
 	<!-- ENDIF -->
 </form>
