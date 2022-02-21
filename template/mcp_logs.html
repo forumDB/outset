@@ -4,22 +4,24 @@
 
 <form method="post" id="mcp" action="{U_POST_ACTION}">
 
-<div class="panel">
-	<div class="inner">
-
-	<div class="action-bar bar-top">
-		{L_SEARCH_KEYWORDS}{L_COLON} <input type="search" class="inputbox autowidth" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="button2" name="filter" value="{L_SEARCH}" />
-		<div class="pagination">
-			{TOTAL}
+	<div class="action-bar bar-top mb-2">
+		<div class="search-box flex-grow-1 flex-md-grow-0 h-100">
+			<div class="input-group">
+				<input type="search" class="form-control rounded-end" name="keywords" value="{S_KEYWORDS}" placeholder="{L_SEARCH_KEYWORDS}" />&nbsp;
+				<input type="submit" class="btn btn-secondary mb-0" name="filter" value="{L_SEARCH}" />
+			</div>
+		</div>
+		<div class="pagination d-flex flex-column justify-content-center">
+			<p class="mb-0">{TOTAL}</p>
 			<!-- IF .pagination -->
 				<!-- INCLUDE pagination.html -->
 			<!-- ELSE -->
-				 &bull; {PAGE_NUMBER}
+			<p>{PAGE_NUMBER}</p>
 			<!-- ENDIF -->
 		</div>
 	</div>
 
-	<table class="table1">
+	<table class="table bg-white">
 	<thead>
 	<tr>
 		<th class="name">{L_USERNAME}</th>
@@ -51,27 +53,27 @@
 	</table>
 
 	<!-- IF .log -->
-		<div class="action-bar bottom">
-			<!-- INCLUDE display_options.html -->
+		<div class="action-bar bottom d-flex justify-content-between">
+			<ul class="navbar-nav">
+				<!-- INCLUDE display_options.html -->
+			</ul>
 
-			<div class="pagination">
-				{TOTAL}
+			<div class="pagination d-flex flex-column justify-content-center">
+				<p class="mb-0">{TOTAL}</p>
 				<!-- IF .pagination -->
 					<!-- INCLUDE pagination.html -->
 				<!-- ELSE -->
-					 &bull; {PAGE_NUMBER}
+				<p>{PAGE_NUMBER}</p>
 				<!-- ENDIF -->
 			</div>
 		</div>
 
 		{S_FORM_TOKEN}
-		</div>
-	</div>
 
 		<!-- IF S_CLEAR_ALLOWED -->
 			<fieldset class="display-actions">
-				<input class="button2" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
-				&nbsp;<input class="button1" type="submit" value="{L_DELETE_MARKED}" name="action[del_marked]" />
+				<input class="btn btn-secondary" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
+				&nbsp;<input class="btn btn-outset" type="submit" value="{L_DELETE_MARKED}" name="action[del_marked]" />
 
 				<div><a href="#" onclick="marklist('mcp', 'mark', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp', 'mark', false); return false;">{L_UNMARK_ALL}</a></div>
 			</fieldset>
