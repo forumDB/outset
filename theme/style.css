@@ -550,6 +550,31 @@ Topics, posts and PMs
     border-bottom: 1px solid #d5d9ea;
 }
 
+.attachbox {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.file {
+    background-color: #f1efef;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 0.7em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.file:last-of-type {
+    margin-right: 0;
+}
+
+.file-icon {
+    background-color: var(--bs-white);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
 /*
 View forum
  */
