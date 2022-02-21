@@ -8,9 +8,6 @@
 
 	<form id="mcp_queue" method="post" action="{S_MCP_QUEUE_ACTION}">
 
-	<div class="panel">
-		<div class="inner">
-
 		<h3>{L_LATEST_UNAPPROVED}</h3>
 		<p>{L_UNAPPROVED_TOTAL}</p>
 
@@ -19,7 +16,6 @@
 				<li class="header">
 					<dl>
 						<dt><div class="list-inner">{L_VIEW_DETAILS}</div></dt>
-						<dd class="moderation"><span>{L_TOPIC} &amp; {L_FORUM}</span></dd>
 					</dl>
 				</li>
 			</ul>
@@ -27,35 +23,37 @@
 
 			<!-- BEGIN unapproved -->
 			<li class="row<!-- IF unapproved.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-				<dl>
-					<dt>
-						<div class="list-inner">
-							<a href="{unapproved.U_POST_DETAILS}" class="topictitle">{unapproved.SUBJECT}</a> <!-- IF unapproved.ATTACH_ICON_IMG --><i class="icon fa-paperclip fa-fw" aria-hidden="true"></i><!-- ENDIF --> <br />
-							{L_POSTED} {L_POST_BY_AUTHOR} {unapproved.AUTHOR_FULL} &raquo; {unapproved.POST_TIME}
+				<dl class="row-item d-flex justify-content-between">
+					<dt class="d-flex flex-grow-1">
+						<div class="list-inner ps-0 d-flex flex-column justify-content-center">
+							<a href="{unapproved.U_POST_DETAILS}" class="topictitle">{unapproved.SUBJECT}</a> <!-- IF unapproved.ATTACH_ICON_IMG --><i class="icon fa-paperclip fa-fw" aria-hidden="true"></i><!-- ENDIF -->
+							<div class="forum-description">{L_POSTED} {L_POST_BY_AUTHOR} {unapproved.AUTHOR_FULL} &raquo; {unapproved.POST_TIME}</div>
 						</div>
 					</dt>
-					<dd class="moderation"><span>
-						{L_TOPIC}{L_COLON} <a href="{unapproved.U_TOPIC}">{unapproved.TOPIC_TITLE}</a> [<a href="{unapproved.U_MCP_TOPIC}">{L_MODERATE}</a>]<br />
-						{L_FORUM}{L_COLON} <!-- IF unapproved.U_FORUM --><a href="{unapproved.U_FORUM}">{unapproved.FORUM_NAME}</a><!-- ELSE -->{unapproved.FORUM_NAME}<!-- ENDIF --><!-- IF unapproved.U_MCP_FORUM --> [<a href="{unapproved.U_MCP_FORUM}">{L_MODERATE}</a>]<!-- ENDIF --></span>
-					</dd>
+					<div class="moderation d-flex flex-column flex-grow-1 forum-description justify-content-center">
+						<div>{L_TOPIC}{L_COLON} <a href="{unapproved.U_TOPIC}">{unapproved.TOPIC_TITLE}</a> [<a href="{unapproved.U_MCP_TOPIC}">{L_MODERATE}</a>]</div>
+						<div>{L_FORUM}{L_COLON} <!-- IF unapproved.U_FORUM --><a href="{unapproved.U_FORUM}">{unapproved.FORUM_NAME}</a><!-- ELSE -->{unapproved.FORUM_NAME}<!-- ENDIF --><!-- IF unapproved.U_MCP_FORUM --> [<a href="{unapproved.U_MCP_FORUM}">{L_MODERATE}</a>]<!-- ENDIF --></div>
+					</div>
 
-			 		<dd class="mark"><input type="checkbox" name="post_id_list[]" value="{unapproved.POST_ID}" /></dd>
+			 		<dd class="d-flex align-items-center">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="post_id_list[]" value="{unapproved.POST_ID}">
+						</div>
+					</dd>
 				</dl>
 			</li>
 			<!-- END unapproved -->
 			</ul>
 		<!-- ENDIF -->
 
-		</div>
 	{S_FORM_TOKEN}
-	</div>
 
 	<!-- IF .unapproved -->
 	<fieldset class="display-actions">
 		{S_HIDDEN_FIELDS}
-		<input class="button2" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
-		<input class="button1" type="submit" name="action[approve]" value="{L_APPROVE}" />
-		<div><a href="#" onclick="marklist('mcp_queue', 'post_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp_queue', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
+		<input class="btn btn-secondary" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
+		<input class="btn btn-outset" type="submit" name="action[approve]" value="{L_APPROVE}" />
+		<div><a href="#" onclick="marklist('mcp_queue', 'post_id_list', true); return false;">{L_MARK_ALL}</a> : <a href="#" onclick="marklist('mcp_queue', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
 	</fieldset>
 	<!-- ENDIF -->
 		</form>
@@ -64,9 +62,6 @@
 <!-- EVENT mcp_front_latest_reported_before -->
 
 <!-- IF S_SHOW_REPORTS -->
-	<div class="panel">
-		<div class="inner">
-
 		<h3>{L_LATEST_REPORTED}</h3>
 		<p>{L_REPORTS_TOTAL}</p>
 
@@ -99,17 +94,11 @@
 			<!-- END report -->
 			</ul>
 		<!-- ENDIF -->
-
-		</div>
-	</div>
 <!-- ENDIF -->
 
 <!-- EVENT mcp_front_latest_reported_pms_before -->
 
 <!-- IF S_SHOW_PM_REPORTS -->
-	<div class="panel">
-		<div class="inner">
-
 		<h3>{L_LATEST_REPORTED_PMS}</h3>
 		<p>{L_PM_REPORTS_TOTAL}</p>
 
@@ -142,20 +131,14 @@
 			<!-- END pm_report -->
 			</ul>
 		<!-- ENDIF -->
-
-		</div>
-	</div>
 <!-- ENDIF -->
 
 <!-- EVENT mcp_front_latest_logs_before -->
 
 <!-- IF S_SHOW_LOGS -->
-	<div class="panel">
-		<div class="inner">
-
 		<h3>{L_LATEST_LOGS}</h3>
 
-		<table class="table1">
+		<table class="table">
 		<thead>
 		<tr>
 			<th class="name">{L_ACTION}</th>
@@ -183,9 +166,6 @@
 	<!-- END log -->
 		</tbody>
 		</table>
-
-		</div>
-	</div>
 <!-- ENDIF -->
 
 <!-- EVENT mcp_front_latest_logs_after -->
