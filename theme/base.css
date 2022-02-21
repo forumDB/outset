@@ -1389,7 +1389,6 @@ form > p.post-notice strong {
 /* Inner box-model clearing */
 .inner:after,
 ul.linklist:after,
-.action-bar:after,
 .notification_text:after,
 .tabs-container:after,
 .tabs > ul:after,

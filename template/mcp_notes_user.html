@@ -4,65 +4,55 @@
 
 <h2>{L_TITLE}</h2>
 
-<div class="panel">
-	<div class="inner">
-
 	<h3>{USERNAME_FULL}</h3>
 
-	<div>
-		<div class="column1">
+		<div class="d-flex">
 			<!-- IF AVATAR_IMG --><div>{AVATAR_IMG}</div><!-- ENDIF -->
+			<div class="d-flex flex-column">
+				<!-- IF RANK_TITLE -->
+				<div class="d-flex"><div class="fw-bold me-2">{L_RANK}{L_COLON}</div>{RANK_TITLE}</div>
+				<!-- ENDIF -->
+				<!-- IF RANK_IMG -->
+				<div class="d-flex"><div class="fw-bold me-2"><!-- IF RANK_TITLE -->&nbsp;<!-- ELSE -->{L_RANK}{L_COLON}<!-- ENDIF --></div>{RANK_IMG}</div>
+				<!-- ENDIF -->
+				<div class="d-flex"><div class="fw-bold me-2">{L_JOINED}{L_COLON}</div>{JOINED}</div>
+				<div class="d-flex"><div class="fw-bold me-2">{L_TOTAL_POSTS}{L_COLON}</div>{POSTS}</div>
+				<div class="d-flex"><div class="fw-bold me-2">{L_WARNINGS}{L_COLON} </div>{WARNINGS}</div>
+			</div>
 		</div>
 
-		<div class="column2">
-			<dl class="details">
-				<!-- IF RANK_TITLE --><dt>{L_RANK}{L_COLON}</dt><dd>{RANK_TITLE}</dd><!-- ENDIF -->
-				<!-- IF RANK_IMG --><dt><!-- IF RANK_TITLE -->&nbsp;<!-- ELSE -->{L_RANK}{L_COLON}<!-- ENDIF --></dt><dd>{RANK_IMG}</dd><!-- ENDIF -->
-				<dt>{L_JOINED}{L_COLON}</dt><dd>{JOINED}</dd>
-				<dt>{L_TOTAL_POSTS}{L_COLON}</dt><dd>{POSTS}</dd>
-				<dt>{L_WARNINGS}{L_COLON} </dt><dd>{WARNINGS}</dd>
-			</dl>
-		</div>
-	</div>
-
-	</div>
-</div>
-
-<div class="panel">
-	<div class="inner">
-
-	<h3>{L_ADD_FEEDBACK}</h3>
+	<h3 class="mt-3">{L_ADD_FEEDBACK}</h3>
 	<p>{L_ADD_FEEDBACK_EXPLAIN}</p>
 
 	<fieldset>
-		<textarea name="usernote" id="usernote" class="inputbox" cols="40" rows="3"></textarea>
+		<textarea name="usernote" id="usernote" class="form-control" cols="40" rows="3"></textarea>
 	</fieldset>
 
-	</div>
-</div>
+	<fieldset class="submit-buttons">
+		{S_HIDDEN_FIELDS}
+		<input type="submit" name="action[add_feedback]" value="{L_SUBMIT}" class="btn btn-outset" />
+		{S_FORM_TOKEN}
+	</fieldset>
 
-<fieldset class="submit-buttons">
-	{S_HIDDEN_FIELDS}
-	<input type="submit" name="action[add_feedback]" value="{L_SUBMIT}" class="button1" />
-	{S_FORM_TOKEN}
-</fieldset>
+	<div class="action-bar bar-top mt-5">
+		<div class="search-box flex-grow-1 flex-md-grow-0 h-100">
+			<div class="input-group">
+				<input type="search" class="form-control rounded-end" name="keywords" value="{S_KEYWORDS}" placeholder="{L_SEARCH_KEYWORDS}" />&nbsp;
+				<input type="submit" class="btn btn-secondary mb-0" name="filter" value="{L_SEARCH}" />
+			</div>
+		</div>
 
-<div class="panel">
-	<div class="inner">
-
-	<div class="action-bar bar-top">
-		{L_SEARCH_KEYWORDS}{L_COLON} <input type="search" class="inputbox autowidth" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="button2" name="filter" value="{L_SEARCH}" />
-		<div class="pagination">
-			{TOTAL_REPORTS}
+		<div class="pagination d-flex flex-column justify-content-center">
+			<p class="mb-0">{TOTAL_REPORTS}</p>
 			<!-- IF .pagination -->
 				<!-- INCLUDE pagination.html -->
 			<!-- ELSE -->
-				 &bull; {PAGE_NUMBER}
+			<p>{PAGE_NUMBER}</p>
 			<!-- ENDIF -->
 		</div>
 	</div>
 
-	<table class="table1">
+	<table class="table bg-white">
 	<thead>
 	<tr>
 		<th class="name reportby">{L_REPORT_BY}</th>
@@ -90,26 +80,25 @@
 	</tbody>
 	</table>
 
-	<div class="action-bar bottom">
-		<!-- INCLUDE display_options.html -->
+	<div class="action-bar bottom d-flex justify-content-between w-100">
+		<ul class="navbar-nav">
+			<!-- INCLUDE display_options.html -->
+		</ul>
 
-		<div class="pagination">
-			{TOTAL_REPORTS}
+		<div class="pagination d-flex flex-column justify-content-center">
+			<p class="mb-0">{TOTAL_REPORTS}</p>
 			<!-- IF .pagination -->
 				<!-- INCLUDE pagination.html -->
 			<!-- ELSE -->
-				 &bull; {PAGE_NUMBER}
+			<p>{PAGE_NUMBER}</p>
 			<!-- ENDIF -->
 		</div>
 	</div>
 
-	</div>
-</div>
-
 <!-- IF S_CLEAR_ALLOWED -->
 <fieldset class="display-actions">
-	<input class="button2" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
-	&nbsp;<input class="button1" type="submit" name="action[del_marked]" value="{L_DELETE_MARKED}" />
+	<input class="btn btn-secondary" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
+	&nbsp;<input class="btn btn-outset" type="submit" name="action[del_marked]" value="{L_DELETE_MARKED}" />
 </fieldset>
 
 <fieldset class="display-actions">
