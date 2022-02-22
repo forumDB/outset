@@ -2408,20 +2408,13 @@ fieldset.polls dd input {
 
 fieldset.polls dd div {
 	text-align: right;
-	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	padding: 2px 2px 0 2px;
 	overflow: visible;
 	min-width: 8px;
 }
 
-.pollbar1, .pollbar2, .pollbar3, .pollbar4, .pollbar5 {
-	border-bottom: 1px solid transparent;
-	border-right: 1px solid transparent;
-}
-
 .vote-submitted {
-	font-size: 1.2em;
 	font-weight: bold;
 	text-align: center;
 }
@@ -3886,53 +3879,23 @@ fieldset.polls dd div {
 }
 
 .pollbar1 {
-	background-color: #AA2346;
-	border-bottom-color: #74162C;
-	border-right-color: #74162C;
-}
-
-.rtl .pollbar1 {
-	border-left-color: #74162C;
+	background-color: #0d6efd;
 }
 
 .pollbar2 {
-	background-color: #BE1E4A;
-	border-bottom-color: #8C1C38;
-	border-right-color: #8C1C38;
-}
-
-.rtl .pollbar2 {
-	border-left-color: #8C1C38;
+	background-color: #0d6efd;
 }
 
 .pollbar3 {
-	background-color: #D11A4E;
-	border-bottom-color: #AA2346;
-	border-right-color: #AA2346;
-}
-
-.rtl .pollbar3 {
-	border-left-color: #AA2346;
+	background-color: #0d6efd;
 }
 
 .pollbar4 {
-	background-color: #E41653;
-	border-bottom-color: #BE1E4A;
-	border-right-color: #BE1E4A;
-}
-
-.rtl .pollbar4 {
-	border-left-color: #BE1E4A;
+	background-color: #0d6efd;
 }
 
 .pollbar5 {
-	background-color: #F81157;
-	border-bottom-color: #D11A4E;
-	border-right-color: #D11A4E;
-}
-
-.rtl .pollbar5 {
-	border-left-color: #D11A4E;
+	background-color: #0d6efd;
 }
 
 /* Poster profile block
