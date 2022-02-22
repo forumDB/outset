@@ -60,10 +60,11 @@
 		<!-- ENDIF -->
 		</ul>
 	</div>
-	<div class="d-flex flex-grow-1 justify-content-end">
+	<div class="d-flex flex-grow-1 justify-content-end align-items-center">
+		<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn me-2">{L_VIEW_UNREAD_POST}</a> <!-- ENDIF -->
 	<!-- IF .pagination or TOTAL_POSTS -->
 		<div class="pagination d-flex flex-column justify-content-center">
-			<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="mark">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF --><p class="mb-0">{TOTAL_POSTS}</p>
+			<p class="mb-0">{TOTAL_POSTS}</p>
 			<!-- IF .pagination -->
 				<!-- INCLUDE pagination.html -->
 			<!-- ELSE -->
