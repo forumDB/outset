@@ -833,6 +833,13 @@ ul.navbar {
     width: 400px;
 }
 
+.truncate {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* UCP */
 .edit-avatar img {
     width: 100px;
