@@ -840,6 +840,14 @@ ul.navbar {
     text-overflow: ellipsis;
 }
 
+.notification-block .avatar {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
 /* UCP */
 .edit-avatar img {
     width: 100px;

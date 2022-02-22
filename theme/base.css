@@ -3721,6 +3721,8 @@ div.rules {
 p.post-notice {
 	background-color: #ECD5D8;
 	background-image: none;
+	border-radius: 5px;
+	padding: 10px;
 }
 
 /*
