@@ -210,17 +210,17 @@
 						</div>
 
 						<!-- IF .topicrow.pagination -->
-						<div class="pagination">
+						<div class="d-flex align-items-center">
 							<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
-							<ul>
-							<!-- BEGIN pagination -->
+							<ul class="pagination pagination-sm ms-1">
+								<!-- BEGIN pagination -->
 								<!-- IF topicrow.pagination.S_IS_PREV -->
-								<!-- ELSEIF topicrow.pagination.S_IS_CURRENT --><li class="active"><span>{topicrow.pagination.PAGE_NUMBER}</span></li>
-								<!-- ELSEIF topicrow.pagination.S_IS_ELLIPSIS --><li class="ellipsis"><span>{L_ELLIPSIS}</span></li>
+								<!-- ELSEIF topicrow.pagination.S_IS_CURRENT --><li class="page-item active"><span>{topicrow.pagination.PAGE_NUMBER}</span></li>
+								<!-- ELSEIF topicrow.pagination.S_IS_ELLIPSIS --><li class="page-item"><span>{L_ELLIPSIS}</span></li>
 								<!-- ELSEIF topicrow.pagination.S_IS_NEXT -->
-								<!-- ELSE --><li><a class="button" href="{topicrow.pagination.PAGE_URL}">{topicrow.pagination.PAGE_NUMBER}</a></li>
+								<!-- ELSE --><li class="page-item"><a class="page-link" href="{topicrow.pagination.PAGE_URL}">{topicrow.pagination.PAGE_NUMBER}</a></li>
 								<!-- ENDIF -->
-							<!-- END pagination -->
+								<!-- END pagination -->
 							</ul>
 						</div>
 						<!-- ENDIF -->

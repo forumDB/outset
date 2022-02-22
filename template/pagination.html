@@ -42,3 +42,20 @@
 		<!-- END pagination -->
 	</ul>
 </nav>
+
+
+<!-- IF .topicrow.pagination -->
+<div>
+	<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+	<ul class="pagination pagination-sm">
+		<!-- BEGIN pagination -->
+		<!-- IF topicrow.pagination.S_IS_PREV -->
+		<!-- ELSEIF topicrow.pagination.S_IS_CURRENT --><li class="page-item active"><span>{topicrow.pagination.PAGE_NUMBER}</span></li>
+		<!-- ELSEIF topicrow.pagination.S_IS_ELLIPSIS --><li class="page-item"><span>{L_ELLIPSIS}</span></li>
+		<!-- ELSEIF topicrow.pagination.S_IS_NEXT -->
+		<!-- ELSE --><li class="page-item"><a class="button" href="{topicrow.pagination.PAGE_URL}">{topicrow.pagination.PAGE_NUMBER}</a></li>
+		<!-- ENDIF -->
+		<!-- END pagination -->
+	</ul>
+</div>
+<!-- ENDIF -->
