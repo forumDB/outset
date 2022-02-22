@@ -524,7 +524,7 @@ Topics, posts and PMs
     .postprofile .avatar img {
         display: block;
         width: auto !important;
-        max-height: 120px;
+        max-width: 120px;
     }
 }
 
