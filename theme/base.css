@@ -1151,92 +1151,6 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	margin-left: 0 !important;
 }
 
-/* Pagination
----------------------------------------- */
-.pagination {
-	float: right;
-	text-align: right;
-	width: auto;
-}
-
-.action-bar.bar-bottom .pagination {
-	margin-top: 0;
-}
-
-.action-bar .pagination .button {
-	margin-right: 0;
-	float: none;
-}
-
-.pagination > ul {
-	display: inline-block;
-	list-style: none !important;
-	margin-left: 5px;
-}
-
-.pagination > ul > li {
-	display: inline-block !important;
-	padding: 0;
-	font-size: 100%;
-	line-height: normal;
-	vertical-align: middle;
-}
-
-.pagination li a, .pagination li span {
-	border-radius: 2px;
-	padding: 2px 5px;
-}
-
-.pagination li.active span {
-	display: inline-block;
-	font-size: 13px;
-	font-weight: normal;
-	font-family: "Open Sans", "Droid Sans", Verdana, Arial, Helvetica;
-	line-height: 1.4;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	border: 1px solid transparent;
-}
-
-.pagination li.ellipsis span {
-	border: none;
-	padding: 0;
-}
-
-.pagination li.page-jump {
-	margin-right: 5px;
-}
-
-.pagination li.page-jump a {
-	padding: 0 8px;
-}
-
-.pagination li.page-jump a i {
-	font-size: 21px;
-}
-
-.pagination .arrow a {
-	padding: 2px 0;
-}
-
-/* Pagination in viewforum for multipage topics */
-.row .pagination {
-	display: block;
-	margin-top: 3px;
-	margin-bottom: 3px;
-}
-
-.row .pagination > ul {
-	margin: 0;
-}
-
-.row .pagination li a, .row .pagination li span {
-	border-radius: 2px;
-	padding: 1px 3px;
-	font-size: 9px;
-}
-
 /* jQuery popups
 ---------------------------------------- */
 .phpbb_alert {
@@ -3945,37 +3859,6 @@ Colours and backgrounds for buttons.css
 .contact-icons a	{ border-color: #DCDCDC; }
 .contact-icons a:hover	{ background-color: #F2F6F9; }
 
-/* Pagination
----------------------------------------- */
-
-.pagination li a {
-	background: #ECEDEE;
-	filter: none;
-	border-color: #B4BAC0;
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	color: #5C758C;
-}
-
-.pagination li.ellipsis span {
-	background: transparent;
-	color: #000000;
-}
-
-.pagination li.active span {
-	background: #4692BF;
-	border-color: #4692BF;
-	color: #FFFFFF;
-}
-
-.pagination li a:hover, .pagination li a:hover .icon, .pagination .dropdown-visible a.dropdown-trigger, .nojs .pagination .dropdown-container:hover a.dropdown-trigger {
-	background: #368AD2;
-	border-color: #368AD2;
-	filter: none;
-	color: #FFFFFF;
-	text-shadow: none;
-}
-
 /* Search box
 --------------------------------------------- */
 
@@ -4467,17 +4350,6 @@ li.notification-reported strong, li.notification-disapproved strong {
 		margin-bottom: 5px;
 	}
 
-	.action-bar > .pagination {
-		float: none;
-		clear: both;
-		padding-bottom: 1px;
-		text-align: center;
-	}
-
-	.action-bar > .pagination li.page-jump {
-		margin: 0 2px;
-	}
-
 	p.jumpbox-return {
 		display: none;
 	}
@@ -4588,16 +4460,6 @@ li.notification-reported strong, li.notification-disapproved strong {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		max-width: 100px;
-	}
-
-	/* Pagination
-	----------------------------------------*/
-	.pagination > ul {
-		margin: 5px 0 0;
-	}
-
-	.row .pagination .ellipsis + li {
-		display: none !important;
 	}
 
 	/* Responsive tables

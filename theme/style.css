@@ -262,12 +262,11 @@ Header
     transition-delay: 0.1s;
 }
 
-/* Bootstrap correction */
+/* Bootstrap corrections */
 .breadcrumb {
     margin-bottom: 0;
 }
 
-/* Bootstrap correction */
 .breadcrumb-item + .breadcrumb-item::before {
     padding-right: .5rem;
     color: #BCA954;
@@ -277,6 +276,22 @@ Header
 
 .breadcrumb-item:last-of-type {
     font-weight: 600;
+}
+
+.page-item.active .page-link {
+    background-color: var(--main);
+    border-color: var(--main);
+}
+
+.page-link {
+    color: var(--blue-grey-darker);
+    background-color: var(--blue-grey);
+    border: 0;
+}
+
+.page-link:hover {
+    background-color: var(--main);
+    color: var(--bs-white);
 }
 
 /* Forum listings */

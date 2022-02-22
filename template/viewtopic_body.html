@@ -61,19 +61,19 @@
 		</ul>
 	</div>
 	<div class="d-flex flex-grow-1 justify-content-end align-items-center">
+		<!-- EVENT viewtopic_body_pagination_top_before -->
 		<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn me-2">{L_VIEW_UNREAD_POST}</a> <!-- ENDIF -->
-	<!-- IF .pagination or TOTAL_POSTS -->
-		<div class="pagination d-flex flex-column justify-content-center">
-			<p class="mb-0">{TOTAL_POSTS}</p>
-			<!-- IF .pagination -->
+		<!-- IF .pagination or TOTAL_POSTS -->
+			<div class="pagination d-flex <!-- IF .pagination -->flex-row align-items-center<!-- ELSE -->flex-column<!-- ENDIF --> justify-content-center">
+				<p class="mb-0 <!-- IF .pagination -->me-2<!-- ENDIF -->">{TOTAL_POSTS}</p>
+				<!-- IF .pagination -->
 				<!-- INCLUDE pagination.html -->
-			<!-- ELSE -->
-			<p>{PAGE_NUMBER}</p>
-			<!-- ENDIF -->
-
-	<!-- ENDIF -->
-	<!-- EVENT viewtopic_body_pagination_top_after -->
-		</div>
+				<!-- ELSE -->
+				<p>{PAGE_NUMBER}</p>
+				<!-- ENDIF -->
+			</div>
+		<!-- ENDIF -->
+		<!-- EVENT viewtopic_body_pagination_top_after -->
 </div>
 </div>
 
@@ -405,7 +405,7 @@
 <!-- ENDIF -->
 
 <!-- EVENT viewtopic_body_topic_actions_before -->
-	<div class="action-bar bar-bottom d-flex justify-content-between flex-wrap my-4">
+	<div class="action-bar bar-bottom d-flex justify-content-between flex-wrap mb-4">
 		<div class="d-flex">
 			<ul class="navbar">
 				<li class="nav-item">
@@ -448,18 +448,17 @@
 			</ul>
 		</div>
 
-	<!-- IF .pagination or TOTAL_POSTS -->
-		<div class="pagination d-flex justify-content-end flex-grow-1">
-			<div class="d-flex flex-column justify-content-center">
-				<p>{TOTAL_POSTS}</p>
-				<!-- IF .pagination -->
-				<!-- INCLUDE pagination.html -->
-				<!-- ELSE -->
-				<p>{PAGE_NUMBER}</p>
-				<!-- ENDIF -->
-			</div>
+		<!-- IF .pagination or TOTAL_POSTS -->
+		<div class="pagination d-flex <!-- IF .pagination -->flex-row align-items-center<!-- ELSE -->flex-column<!-- ENDIF --> justify-content-center">
+			<p class="mb-0 <!-- IF .pagination -->me-2<!-- ENDIF -->">{TOTAL_POSTS}</p>
+			<!-- IF .pagination -->
+			<!-- INCLUDE pagination.html -->
+			<!-- ELSE -->
+			<p>{PAGE_NUMBER}</p>
+			<!-- ENDIF -->
 		</div>
-	<!-- ENDIF -->
+		<!-- ENDIF -->
+
 </div>
 
 <!-- EVENT viewtopic_body_footer_before -->
