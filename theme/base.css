@@ -446,11 +446,6 @@ h6,
 figure,
 p,
 pre { margin: 0; }
-button {
-	background: transparent;
-	border: 0;
-	padding: 0;
-}
 
 /**
  * Work around a Firefox/IE bug where the transparent `button` background
