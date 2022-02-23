@@ -836,6 +836,12 @@ ul.navbar {
     width: 400px;
 }
 
+@media only screen and (max-width: 400px) {
+    .notification-dropdown {
+        width: 300px;
+    }
+}
+
 .truncate {
     width: 200px;
     white-space: nowrap;
