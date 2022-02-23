@@ -666,13 +666,6 @@ User CP
     font-weight: 600;
 }
 
-@media only screen and (max-width: 900px), only screen and (max-device-width: 900px)
-{
-    #navigation a, .rtl #navigation a {
-        background: #B2C2CF;
-    }
-}
-
 /* Main CP box
 ----------------------------------------*/
 .cp-menu {
@@ -691,6 +684,7 @@ User CP
 @media only screen and (max-width: 768px) {
     .cp-menu, .cp-main {
         width: 100%;
+        margin-bottom: 10px;
     }
 }
 
@@ -860,4 +854,11 @@ ul.navbar {
 
 .topic-type input[type="radio"]:checked+label {
     background-color: var(--main);
+}
+
+/* Posting editor */
+.topic-type input[type="radio"]:checked+label {
+    font-weight: bold;
+    background-color: var(--main) !important;
+    color: var(--bs-white);
 }

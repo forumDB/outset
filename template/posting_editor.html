@@ -187,7 +187,7 @@
 			<!-- IF S_TYPE_TOGGLE -->
 			<div class="form-check mt-3 ms-0 ps-0 d-flex flex-column">
 				<b><!-- IF S_EDIT_POST -->{L_CHANGE_TOPIC_TO}<!-- ELSE -->{L_POST_TOPIC_AS}<!-- ENDIF --></b>
-				<div>
+				<div class="topic-type">
 				<!-- BEGIN topic_type -->
 					<input class="form-check-input d-none" type="radio" name="topic_type" id="topic_type-{topic_type.VALUE}" value="{topic_type.VALUE}"{topic_type.S_CHECKED}>
 					<label class="form-check-label btn btn-secondary" for="topic_type-{topic_type.VALUE}">
