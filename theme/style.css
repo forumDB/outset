@@ -1,3 +1,6 @@
+/*
+General
+*/
 :root {
     --main: #0091AD;
     --lesser: #F7E8A4;
@@ -17,47 +20,50 @@ body {
     background-color: #F2F7FA;
 }
 
-a {color: var(--main);}
-a:hover,a:active,a:focus {
-    color: var(--main);
-    text-decoration: none;
-}
-
+/* Background and text colors */
 .bg-main {background-color: var(--main);}
 .text-main {color: var(--main);}
 .bg-lesser {background-color: var(--lesser);}
 .text-lesser-darker {color: var(--lesser-darker);}
 .bg-blue-grey {background-color: var(--blue-grey);}
 
-input[type="radio"]:checked+label { font-weight: bold; }
-
-/* Width profiles */
+/* Extending Bootstrap's width profiles */
 @media screen and (min-width: 768px) {
     .w-md-50 {
         width: 50% !important;
     }
 }
 
-/* Text */
-a { text-decoration: none; }
-a:hover{ text-decoration: none; }
+/* Links */
+a {
+    color: var(--main);
+    text-decoration: none;
+}
 
+a:hover, a:active, a:focus {
+    color: var(--main);
+    text-decoration: none;
+}
+
+/* Typography */
 h2 {
-	/* Forum header titles */
-	font-weight: 400;
-	font-size: 2em;
-	margin: 0.8em 0 0.2em 0;
+    /* Forum header titles */
+    font-weight: 400;
+    font-size: 2em;
+    margin: 0.8em 0 0.2em 0;
 }
 
 h2.solo {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
-h3 { color:var(--main);}
+h3 {
+    color: var(--main);
+}
 
-/* */
-/* Buttons */
-/* */
+/*
+Buttons
+*/
 .btn {
     font-weight: 600;
 }
@@ -83,7 +89,7 @@ h3 { color:var(--main);}
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     border-radius: 0.25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 /* Button styles + overriding Prosilver button styles */
@@ -144,7 +150,7 @@ h3 { color:var(--main);}
 Header
  */
 .page-header {
-    background: linear-gradient(66deg, rgba(87,191,158,1) 0%, rgba(0,145,173,1) 62%, rgba(14,68,156,1) 100%);
+    background: linear-gradient(66deg, rgba(87, 191, 158, 1) 0%, rgba(0, 145, 173, 1) 62%, rgba(14, 68, 156, 1) 100%);
     background-size: 400% 400%;
     animation: gradient 45s ease infinite;
     margin-bottom: -20px;
@@ -188,15 +194,25 @@ Header
     .logo {
         margin-left: 10px;
     }
+
     .logo-text {
         font-size: 3vw;
         margin-left: 0;
     }
 }
 
-.page-header .nav-link { color: var(--bs-white); }
-.page-header .nav-link:hover,.page-header .nav-link:active,.page-header .nav-link:focus { color: var(--bs-white); filter: brightness(85%);  }
-.navbar-nav .dropdown-menu { position: absolute; }
+.page-header .nav-link {
+    color: var(--bs-white);
+}
+
+.page-header .nav-link:hover, .page-header .nav-link:active, .page-header .nav-link:focus {
+    color: var(--bs-white);
+    filter: brightness(85%);
+}
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+}
 
 .nav-link img { /* Avatars next to username in header */
     max-width: 40px;
@@ -224,6 +240,22 @@ Header
 .quick-links svg {
     width: 40px;
     color: #FFF;
+}
+
+.page-item.active .page-link {
+    background-color: var(--main);
+    border-color: var(--main);
+}
+
+.page-link {
+    color: var(--blue-grey-darker);
+    background-color: var(--blue-grey);
+    border: 0;
+}
+
+.page-link:hover {
+    background-color: var(--main);
+    color: var(--bs-white);
 }
 
 /* Breadcrumbs */
@@ -265,28 +297,16 @@ Header
     font-weight: 600;
 }
 
-.page-item.active .page-link {
-    background-color: var(--main);
-    border-color: var(--main);
-}
-
-.page-link {
-    color: var(--blue-grey-darker);
-    background-color: var(--blue-grey);
-    border: 0;
-}
-
-.page-link:hover {
-    background-color: var(--main);
-    color: var(--bs-white);
-}
-
-/* Forum listings */
+/*
+Forum list
+*/
 ul.forums, .forums dl.row-item dt a {
     color: #464646;
 }
 
-.header { margin: 20px 0 10px 0; }
+.header {
+    margin: 20px 0 10px 0;
+}
 
 .header a {
     color: #000;
@@ -410,7 +430,9 @@ li.row strong {
 }
 
 /* Forum list column styles */
-.row .list-inner { padding: 4px 0; }
+.row .list-inner {
+    padding: 4px 0;
+}
 
 dl.row-item {
     background-position: 13px 50%;
@@ -418,7 +440,9 @@ dl.row-item {
     background-size: 40px;
 }
 
-/* Statistics */
+/*
+Statistics
+*/
 .stat-block {
     padding: 20px;
     background-color: #FFF;
@@ -427,14 +451,17 @@ dl.row-item {
     margin: 5px;
 }
 
-.stat-block p { font-size: 0.8em; }
+.stat-block p {
+    font-size: 0.8em;
+}
 
 .stat-block .badge a {
     background-color: unset;
 }
-/* */
-/* Forms */
-/* */
+
+/*
+Forms
+*/
 .form-control {
     background-color: #e4e7f4;
     border: 0;
@@ -445,9 +472,7 @@ dl.row-item {
     opacity: 1;
 }
 
-/*
-Search bar top
-*/
+/* Search bar top */
 .search-bar input,
 .search-bar .input-group-text {
     border-radius: 10px;
@@ -467,6 +492,13 @@ Search bar top
     border-radius: 10px;
 }
 
+/* Posting editor */
+.topic-type input[type="radio"]:checked + label {
+    font-weight: bold;
+    background-color: var(--main) !important;
+    color: var(--bs-white);
+}
+
 /*
 Topics, posts and PMs
  */
@@ -479,7 +511,9 @@ Topics, posts and PMs
     background-color: #FFF;
 }
 
-.post, .post-author { margin-bottom: 0;}
+.post, .post-author {
+    margin-bottom: 0;
+}
 
 .post-time {
     position: relative;
@@ -500,10 +534,11 @@ Topics, posts and PMs
     border-radius: 50%;
 }
 
-@media only screen and (min-width:992px) {
+@media only screen and (min-width: 992px) {
     .post-time p {
         background-color: #f2f7fa;
     }
+
     .postprofile .avatar img {
         display: block;
         width: auto !important;
@@ -573,6 +608,25 @@ Topics, posts and PMs
     height: 60px;
 }
 
+.online-indicator {
+    border-radius: 50%;
+    background-color: var(--bs-green);
+    padding: .5rem;
+    border: 3px solid #f6f7fb;
+    position: absolute;
+    top: 5%;
+    left: 75%;
+}
+
+@media (max-width: 700px) {
+    .online-indicator {
+        top: 0;
+        left: 60%;
+        border: 2px solid #f6f7fb;
+        padding: .3rem;
+    }
+}
+
 /*
 View forum
  */
@@ -588,6 +642,17 @@ View forum
 /*
 User CP
  */
+.edit-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.topic-type input[type="radio"]:checked + label {
+    background-color: var(--main);
+}
+
+/* CP tabs shared */
 .tabs .tab > a {
     color: #536482;
 }
@@ -603,7 +668,7 @@ User CP
     font-weight: 600;
 }
 
-/* CP tabs shared */
+
 .tabs, .minitabs {
     line-height: normal;
 }
@@ -647,7 +712,6 @@ User CP
 }
 
 /* UCP navigation menu */
-/* Link styles for the sub-section links */
 .navigation a {
     color: #333;
     font-weight: 400;
@@ -666,8 +730,7 @@ User CP
     font-weight: 600;
 }
 
-/* Main CP box
-----------------------------------------*/
+/* Main CP box */
 .cp-menu {
     float: left;
     width: 19%;
@@ -758,7 +821,9 @@ ul.cplist {
     margin: 0;
 }
 
-/* User profile */
+/*
+User profile
+*/
 .profile-avatar img {
     height: 120px;
     width: 120px;
@@ -788,7 +853,7 @@ ul.cplist {
 }
 
 /*
-Components
+Various components
  */
 .action-bar p {
     font-size: 0.8em;
@@ -797,27 +862,10 @@ Components
 ul.navbar {
     list-style: none;
 }
+
 .terms {
     height: 50vh;
     font-size: 1.4em;
-}
-.online-indicator {
-    border-radius: 50%;
-    background-color: var(--bs-green);
-    padding: .5rem;
-    border: 3px solid #f6f7fb;
-    position: absolute;
-    top: 5%;
-    left: 75%;
-}
-
-@media (max-width: 700px) {
-    .online-indicator {
-        top: 0;
-        left: 60%;
-        border: 2px solid #f6f7fb;
-        padding: .3rem;
-    }
 }
 
 .notification-dropdown {
@@ -843,22 +891,4 @@ ul.navbar {
     align-self: center;
     margin-right: 10px;
     border-radius: 50%;
-}
-
-/* UCP */
-.edit-avatar img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-}
-
-.topic-type input[type="radio"]:checked+label {
-    background-color: var(--main);
-}
-
-/* Posting editor */
-.topic-type input[type="radio"]:checked+label {
-    font-weight: bold;
-    background-color: var(--main) !important;
-    color: var(--bs-white);
 }
